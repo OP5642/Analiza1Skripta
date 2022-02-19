@@ -1,0 +1,107 @@
+\documentclass[../main_og.tex]{subfiles}
+
+\usepackage[OT2]{fontenc}
+\usepackage[english,serbianc]{babel} 
+\usepackage{listings}%dozvoljava nam da dodajemo delove koda
+\usepackage{amsmath}%dozvoljava nam neke stvari iz matematike
+\usepackage{amsthm}%theorem stvari
+\usepackage{dsfont}%npr. za boldovanu jedinicu
+\usepackage{amsfonts}%dozvoljava upotrebu raznih fontova
+\usepackage{mathrsfs}%za neke fontove, npr mathscr za filtere
+\usepackage{mathtools} %svashta, npr. za pisanje teksta iznad \iff
+\usepackage{amssymb}%dozvoljava upotrebu raznih simbola puput measuredangle
+\usepackage{color} %koristimo boje
+\usepackage{enumitem,framed} %za leftmargin u itemiz
+\usepackage{indentfirst}
+\usepackage[lmargin=2.0cm, rmargin=2.0cm,tmargin=2.50cm,bmargin=2.50cm]{geometry}
+
+\usepackage{subfiles} %najbolje ovo na kraju koristiti
+
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{mygray}{rgb}{0.7,0.7,0.7}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+ 
+\righthyphenmin 2 
+
+
+%Podesavanje izgleda koda
+\lstset{ 
+ backgroundcolor=\color{mygray}, % choose the background color
+ basicstyle=\footnotesize, % the size of the fonts that are used for the code
+ breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+ breaklines=true, % sets automatic line breaking
+ captionpos=b, % sets the caption-position to bottom
+ commentstyle=\color{blue}, % comment style
+ deletekeywords={...}, % if you want to delete keywords from the given language
+ escapeinside={\%*}{*)}, % if you want to add LaTeX within your code
+ extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+ frame=single, % adds a frame around the code
+ keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+ keywordstyle=\color{mygreen}, % keyword style
+ language=TeX, %defining the prefered language, can be changned in []
+ morekeywords={*,...}, % if you want to add more keywords to the set
+ numbers=left, % where to put the line-numbers; possible values are (none, left, right)
+ numbersep=5pt, % how far the line-numbers are from the cod
+ numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+ rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+ showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+ showstringspaces=false, % underline spaces within strings only
+ showtabs=false, % show tabs within strings adding particular underscores
+ stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
+ stringstyle=\color{mymauve}, % string literal style
+ tabsize=2, % sets default tabsize to 2 spaces
+ title=\lstname % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%Kraj podesavanja izgleda koda
+
+\begin{document}
+    Pristupamo definisanju realnih brojeva preko aksiome supremuma, kao i algebarskim strukturama. Ovo nije jedini pristup, moguc1e su i opcije preko Arhimedove i Kantorove aksiome, koje c1emo pominjati dalje u toku poglavalja. Takodje je moguc1e i primeniti Dedekindove preseke za zasnivanje realnih brojeva, svi od ovih nachina su ekvivalentni, shto nec1emo eksplicitno dokazati, ali ovde nagalshavamo.
+
+\section{Abelove i (totalno) uredjene Abelove grupe}
+
+    {\de Algebarska struktura $(A,+,0)$ je \textit{Abelova grupa} ako su ispunjeni sledec1i uslovi:
+
+\begin{itemize}[itemindent=6em]
+    \item[(Zatvorenost)] $(\forall x,y\in A) x+y\in A$  
+    \item[(Asocijativnost)] $(\forall x,y,z \in A) x+(y+z)=(x+y)+z$ 
+    \item[(Neutral)] $(\exists 0 \in A) (\forall x \in A) x+0=x=x+0$ 
+    \item[(Inverz)] $(\forall x\in A) (\exists -x\in A) x+(-x)=(-x)+x=0$  
+    \item[(Komutativnost)]  $(\forall x,y\in A)x+y=y+x$  
+\end{itemize}}
+
+    Zatvorenost je zapravo svojstvo same operacije, pa se ponekad ne navodi u samoj defi-niciji. Struktura koja je samo zatvorena naziva se gruopoid, ako je uz to josh i asocija-tivna, onda je semigrupa (pulugrupa), ako josh i postoji neutral onda je monoid, a ako postoji i inverz onda je grupa. Komutativne grupa je Abelova grupa. Ova strukutra prirodno opisuje neke osnovne stvari, npr. $(\mathbb{Z},+,0)$ je primer Abelove grupe, $(S_n,\circ,)$ je grupa permutacija (nije komutativna u opshtem sluchaju), i u njima vazhe stvari koje su prirodne za ochekivati, npr. jedinstvenost neutrala i inverza.    
+
+    {\tvr Neutral je jedinstven.}
+
+    \begin{proof} 
+        Pretpostavimo suprotno, tj. da imamo dva razlichita neutrala, $0_1$ i $0_2$. Iz defini-cije neutrala imamo $0_1=0_1+0_2=0_2$, pa je neutral jedinstven.\end{proof}
+
+    Prirodno je definisati i oduzimanje (slichnu ideju koristimo i kada formalno, u logici, definishemo cele brojeve), naime $z$ je razlika $x$ i $y$, u oznaci $z=x-y$, ako je $x+z=y$. Formalnije, definishimo funkciju $\tau_a : A \to A$ (ovakvu funkciju nazivamo translacijom iz ochiglednih razloga), gde je $\tau_a(x)=a+x$. Posebno istichemo sledec1a svojstva.
+    {\tvr Za svaku translaciju vazhi:
+        \begin{itemize}
+    \item $\tau_{a+b}=\tau_a\circ\tau_b=\tau_b\circ\tau_a$
+\item $\tau_a\circ\tau_{-a}=\tau_{-a}\circ\tau_a=\mathds{1}_a$
+\item $\tau_{-a}=\tau_a^{-1}$
+\item Translacija je permutacija skupa $A$.\end{itemize}}
+    \begin{proof}
+        Prvo svojstvo direktno sledi iz asocijativnosti operacije $+$ i komutativnosti. Ono direktno povalchi drugo, iz kojeg zakljuchujemo da su $\tau_a$ i $\tau_{-a}$ medjusobno inverzne bijekcije, pa odatle zakljuchujemo i poslednje dve stavke.\end{proof}
+
+    {\tvr Za sve $x,y,z\in A$ jednachina $\tau_y(z)=x$ ima tachno jedno reshenje $z$ }
+    \begin{proof}
+    Sledi iz trec1e stavke prethodnog tvrdjenja.     \end{proof}
+
+    {\posl Inverz je jedinstven (inverz je u stvari reshenje jednachine $\tau_x(y)=0$).} 
+
+    Sada i mozhemo formalno rec1i da je $z$ razlika brojeva $x$ i $y$, u prethodno navedenoj oznaci, ako je $\tau_{y}(z)=x$
+
+    {\de Preslikavanje $\sigma: A \to A$ dato sa $\sigma(x)=-x$ nazivamo simetrijom, ili refleksijom}.
+
+    \nap Refleksija je dobro definisana jer je inverz jedinstven.
+
+    {\tvr Za svaku refleksiju vazhi $\sigma\circ\sigma=\mathds{1}$}
+
+    \begin{proof} 
+    Iz definicije sledi da je $x+\sigma(x)=0$, a samim tim je i $\sigma(x)+\sigma(\sigma(x))=0$, odakle sledi da je $\sigma(\sigma(x))=x$, za proizvoljno $x$.    \end{proof}
+
+    Sabiranje se definishe kao funkcija $+:A \times A \to A$. Medjutim, mi smo navikli da pishemo i npr. izraze oblika $a+b+c+d$, koji bi imali smisla samo kada imamo vec1 asocijativnost operacije. Definiciju sabiranja proshirujemo na preslikavanje $\Sigma : \cup_{n\in \mathbb{N}} A^{n} \to A$ na induktivan nachin.
+\end{document}

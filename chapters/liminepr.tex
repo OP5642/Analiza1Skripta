@@ -1,0 +1,313 @@
+\documentclass[../main_og.tex]{subfiles}
+
+\usepackage[OT2]{fontenc}
+\usepackage[english,serbianc]{babel} 
+\usepackage{listings}%dozvoljava nam da dodajemo delove koda
+\usepackage{amsmath}%dozvoljava nam neke stvari iz matematike
+\usepackage{amsthm}%theorem stvari
+\usepackage{dsfont}%npr. za boldovanu jedinicu
+\usepackage{amsfonts}%dozvoljava upotrebu raznih fontova
+\usepackage{mathrsfs}%za neke fontove, npr mathscr za filtere
+\usepackage{mathtools} %svashta, npr. za pisanje teksta iznad \iff
+\usepackage{amssymb}%dozvoljava upotrebu raznih simbola puput measuredangle
+\usepackage{color} %koristimo boje
+\usepackage{enumitem,framed} %za leftmargin u itemiz
+\usepackage{indentfirst}
+\usepackage[lmargin=2.0cm, rmargin=2.0cm,tmargin=2.50cm,bmargin=2.50cm]{geometry}
+
+\usepackage{subfiles} %najbolje ovo na kraju koristiti
+
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{mygray}{rgb}{0.7,0.7,0.7}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+ 
+\righthyphenmin 2 
+
+
+%Podesavanje izgleda koda
+\lstset{ 
+ backgroundcolor=\color{mygray}, % choose the background color
+ basicstyle=\footnotesize, % the size of the fonts that are used for the code
+ breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+ breaklines=true, % sets automatic line breaking
+ captionpos=b, % sets the caption-position to bottom
+ commentstyle=\color{blue}, % comment style
+ deletekeywords={...}, % if you want to delete keywords from the given language
+ escapeinside={\%*}{*)}, % if you want to add LaTeX within your code
+ extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+ frame=single, % adds a frame around the code
+ keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+ keywordstyle=\color{mygreen}, % keyword style
+ language=TeX, %defining the prefered language, can be changned in []
+ morekeywords={*,...}, % if you want to add more keywords to the set
+ numbers=left, % where to put the line-numbers; possible values are (none, left, right)
+ numbersep=5pt, % how far the line-numbers are from the cod
+ numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+ rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+ showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+ showstringspaces=false, % underline spaces within strings only
+ showtabs=false, % show tabs within strings adding particular underscores
+ stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
+ stringstyle=\color{mymauve}, % string literal style
+ tabsize=2, % sets default tabsize to 2 spaces
+ title=\lstname % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%Kraj podesavanja izgleda koda
+
+\begin{document}
+\section{Filteri}
+
+    Filteri nam omoguc1avaju da odmah razmatramo neke uopshtenije sluchajeve limesa, neshto shto smatramo limesom, ali ne u onoj obichnoj formi u kojoj smo mi navikli. Opet, mogu i da olakshaju znatno neke dokaze, a negde su mozhda chak i prirodniji za upotrebu od obichnih definicija limesa.
+
+    {\de Filter na skupu $S$ je podskup partitivnog skupa (tj. familija podskupova $S$) $\mathscr{F}\subseteq\mathcal{P}(S)$, koja ima svojstva:
+    \begin{itemize}
+        \item[({\latin{F}}1)] $S \in \mathscr{F}$  
+        \item[({\latin{F}}2)] $\emptyset \notin \mathscr{F}$
+        \item[({\latin{F}}3)] $X,Y \in \mathscr{F} \implies X\cap Y \in \mathscr{F}$
+        \item[({\latin{F}}4)] $X \in \f \land X \subseteq Y\subseteq S\implies Y \in \f$
+    \end{itemize}
+    }
+
+\nap Naglasimo da se svojstva ({\latin{F}3}) i ({\latin{F}4}) mogu objediniti u svojstvo $$X,Y \in \mathscr{F} \iff X\cap Y \in \mathscr{F},$$ no svojstva data u definiciju su intuitivna za rad, iako su neshto duzhe zapisana.
+
+    {\pr Skup $\f=\{S\}$ je jedan filter na $S$.}
+    {\pr Ako je $\emptyset \subset A\subseteq S$, onda je $\f=\{X\in \mathcal{P}(S)\mid A\subseteq S\}$ jedan filter na $S$.}
+    {\pr Skup svih kofinitnih podskupova $S$ je filter na $S$, ovaj filter nazivamo Fresheovim filterom. Specijalno, Fresheov filter na $\mathbb{N}$, c1e biti od posebnog znachaja u radu sa nizovima.}
+
+   {\pr Skup $A\psj \R$ je okolina tachke $a \in A$, ako sadrzhi neki pravi interval sa centrom u $a$, tj. ako $$(\exists \delta > 0) ]a-\delta,a+\delta[ \psj A.$$ Skup $\f_a$ koji chine sve okoline tachke $a$, je jedan filter na $\R$ koji nazivamo filterom okoline tachke $a$.}
+
+   {\pr Za $a \in \R$, skup $\f_a^0=\{X\mid\cup \{a\}\in \f_a\}$ je filter koji nazivamo filterom probushenih okolina tachke $a$.}
+
+   \nap Treba formalno dokazati da je sve iz navedenih primera zapravo filter, shto sprovodimo direktnom proverom svojstva $(F1)$ - $(F4)$.
+
+    {\de Neka je $\f$ filter na skupu $S$ i $\rho$ binarna relacija na skupu $Y$. Na skupu $Y^S:=\{f:S\to Y\}$ svih preslikavanja definishemo binarnu relaciju $\rho_\f$ sa $$f\mathrel{\rho_\f} g \jpd \{s \in S \mid f(s) \mathrel{\rho} g(s)\}\in \f$$}
+
+    Slobodnije recheno, tvrdimo da su funkcije u relaciji, ako je skup koordinata na kojima se funkcije poklapaju element filtera. Definicija je znachajna, jer nam omoguc1a-va da na neki nachin proshirujemo relaciju definisanu na kodomenu funkcije do relacije na skupu funkcija.
+
+    {\tvr Ako je $\mathrel{\rho}$ refleksivna, onda je i $\mathrel{\rho_\f}$ refleksivna. Analogna tvrdjenja vazhe za simetrichnost i tranzitivnost.}
+
+    \dok Dokazhimo najrpe refleksivnost. Treba dokazati da je uvek $f\mathrel{\rho}f$. Po definiciji, ovo je tachno ako je skup $\{s\in S\mid f(s)\mathrel{\rho}f(s)\} \in \f,$ a kako je $\mathrel{\rho}$ refleksivna, onda je ovo isto kao $S \in \f$, shto jeste tahcno. Dokaz simetrichnosti se svodi na svojstvo da je $$\{s \in S\mid  f(s) \mathrel{\rho} g(s)\}=\{s \in S\mid  g(s) \mathrel{\rho} f(s)\},$$ shto sledi direktno iz simetrichnosti $\mathrel{\rho}$. Dokaz tranzitivnosti se oslanja na $(F3)$ (po-smatramo presek skupova, shto je takodje element filtera).
+
+    \nap Antisimetrichnost se ne prenosi. Konstruisac1emo jednostavan kontrapri-mer. Neka je $S=Y=\{1,2,3\}$, filter $\f=\{\{3\},\{1,3\},\{2,3\},\{1,2,3\}\}$,i neka je relacija $\mathrel{\rho}=\{(1,1),(1,2),(1,3),(2,2),(2,3),(3,3)\}$ i funkcije $f=\begin{pmatrix}
+1 & 2 & 3\\
+1 & 2 & 3
+\end{pmatrix}$ i $g=\begin{pmatrix}
+1 & 2 & 3\\
+3 & 3 & 3
+\end{pmatrix}$. Tada vazhi $f\mathrel{\rho_\f}g$ i $g\mathrel{\rho_\f}f$, ali je $f\neq g$.
+
+    {\posl Ako je $\rho$ relacija ekvivalencije, onda je je $\rho_\f$ relacija ekvivalencije. Isto tvrdjenje ne vazhi ako je $\rho$ relacija poretka}
+    {\de Neka je $\zeta \in \C$, $r \in \R$ i $r>0$. Otvoreni disk sa centrom u $\zeta$ poluprechnika $r$ je skup $\od{\zeta}{r}:=\{z\in \C\mid |z-\zeta|<r\}$. Slichno definishemo i zatovreni disk $\zd{\zeta}{r}:=\{z\in \C\mid |z-\zeta|\leq r\}$. }
+    {\de Neka je $\f$ filter na $S$ i $f\in \C^S$ preslikavanje iz $S$ u $\C$. Kompleksan broj $\zeta$ je limes preslikavanja $f$ po filteru $\f$ ako za sve $\varepsilon>0$ vazhi $|f-\zeta|<_\f \varepsilon$, tj. \[\zeta= \lim_\f f \jpd (\forall \varepsilon >0)|f-\zeta|<_\f\varepsilon.\]}
+    Ekvivalentno: 
+    \begin{align*}\zeta=\lim_\f f &\iff (\forall \eps>0) f^{-1}(\od{\zeta}{\eps})\in \f\\
+    &\iff (\forall \eps>0) \{s\in S\mid|f(s)-\zeta|<\eps\}\in \f
+    \end{align*}
+    {\tvr Limes po filteru je jedinstven.}
+
+    \dok Pretpostavimo suprotno, tj. da postoje dva razlichita limesa funkcije $f:S\to \C$ po filteru $\f$  i neka su to $\alpha, \beta \in \C$. Neka su 
+    \begin{align*}
+        X:= f^{-1}(\od{\alpha}{\eps}) \in \f\\
+        Y:= f^{-1}(\od{\beta}{\eps}) \in \f.
+    \end{align*}
+    Iz $(F2)$ sledi da je $X\cap Y\in \f$, medjutim uzimanjem $\eps=\dfrac{1}{3}|\alpha-\beta|$ dobijamo da je $X\cap Y=\emptyset$, kontradikcija.
+
+    Neka je $\niz{z}$ niz kompleksnih brojeva, tj. preslikavanje $z:\N \to \C$. Kazhemo da $z_n$ konvergira ka $z_\infty\in C$ ako je \[z_\infty=\lim_{\f_\N}z,\] gde je $\f_\N$ Fresheov filter na $\N$. Broj $z_\infty$ nazivamo granichnom vrednosh\-c1u ili limesom niza  $\niz{z}$. Pored navedene, koriste se josh i oznake $\ds{\lim_{n\to\infty}z_n=z_\infty,z_n\overset{n\to\infty}{\longrightarrow}z_\infty,z_n\to z_\infty}$ kad $n\to \infty$. Ako postoji limes, onda niz nazivamo konvergentim, a u suprotnom ga nazivamo divergentnim.
+
+    Ova definicija postojanja limesa niza je ekvivalentna standardnoj definiciji, iako to mozhda nije ochigledno na prvi pogled. Nasha definicija kazhe da c1e za svako $\eps>0$ skup indeksa $i$ za koje vazhi $z_i\in \od{z_\infty}{\eps}$ (tj. koji su na rastojanju manjem od $\eps$ od tachke $z_\infty$) biti chlan $\f_\N$. Medjutim, po definiciji $\f_\N$, to upravo znachi da je komplement tog skupa indeksa konachan, shto znachi da c1e pochev od nekog $n_0$, za svako $n\geq n_0$ vazhiti $z_n\in \od{z_\infty}{\eps}$.
+
+\section{Neprekidnost i limes funkcije}
+    \begin{de}\label{defnepr}
+     Funkcija $f:\R \to \C$ je neprekidna u tachki $a\in \R$ ako postoji $\ds{\lim_{\f_a}f}$, gde je $\f_a$ filter okoline tachke $a$. Koristimo oznaku $f \cont a$.\[f\cont a \jpd \exists \lim_{\f_a}f\].
+        \end{de}
+    Kazhemo da je funkcija neprekidna na skupu $A\psj \R$ ako je neprekidna u svakoj tachki tog skupa, i tada koristimo oznaku $f\cont A$.
+    \[f\cont A \jpd (\forall a\in A) f\cont a\]
+
+    \nap Postojanje limesa po filiteru okoline tachke je ekvivalentno sa $$\lim_{\f_a}=f(a).$$ Pretpostavimo suprotno, neka je $\ds{\lim_{\f_a}=\gamma\neq f(a)}$. Onda uzimanjem $\eps=\dfrac{1}{3}|f(a)-\gamma|$ vazhi da $a\notin f^{-1}(\od{\gamma}{\eps})$, a samim tim i $ f^{-1}(\od{\gamma}{\eps})\notin \f_a$, odakle sledi kontradikcija.
+
+    Ekvivalentne formulacije neprekidnosti: 
+    \begin{align*}
+        f \cont a &\iff (\forall \eps> 0)(\exists \delta > 0) |x-a|<\delta \implies |f(x)-f(a)|<\eps \\
+                  &\iff (\forall \eps> 0)(\exists \delta > 0) f(]a-\delta,a+\delta[)\psj \od{f(a)}{\eps}.
+    \end{align*}
+
+    \begin{de}\label{deflimfje}
+    Kazhemo da je $\zeta \in \C$ limes funkcije $f:\R\to\C$ u tachki $a\in\R$ ako je $$\zeta=\ds{\lim_{\f_a^0}f}$$
+        \end{de}
+    Za limes funkcije u tachki chesh\-c1e koristimo oznaku $\ds{\lim_{x \to a}f(x)}$, ili $f(x)\to \zeta$ kad $x\to a$. Ekvivalntne definicije limesa funkcije u tachki su: 
+    \begin{align*}
+        \zeta= \lim_{x\to a} &\iff(\forall \eps> 0)(\exists \delta > 0) 0<|x-a|<\delta \implies |f(x)-\zeta|<\eps\\
+                             &\iff(\forall \eps> 0)(\exists \delta > 0) f(]a-\delta,a+\delta[\setminus \{a\})\psj \od{\zeta}{\eps}.
+    \end{align*}
+
+    Primetimo da se znatno razlikuju definicije neprekidnosti u tachki i postojanja limesa u tachki. Naime, vrednost funkcije u tachki $a$ ne mora imati nikakve veze sa limesom funkcije u toj tachki. Jasno je da ukoliko postoji veza, onda se povezuju nepre-kidnost i vrednost limesa u tachki, shto posebno istichemo u sledec1em stavu.
+    \begin{st}
+     Za funkciju $f:\R \to \C$ i $a\in \R$ sledec1i iskazi su ekvivalentni:
+\begin{enumerate}
+    \item $f\cont a$
+    \item $\ds{\lim_{x \to a}=f(a)}$
+    \item Za svaki niz $\niz{x}$ u $\R$ vazhi \[\lim_{n \to \infty}x_n=a \implies \lim_{n \to \infty}f(x_n)=f(a) \]
+\end{enumerate}
+        \end{st}
+    \begin{proof}
+        Dokazhimo najpre da (1) implicira (2). Neka je $\eps>0$ proizvoljno.
+	Po definiciji postojanja limesa po filteru okoline, znamo da je $f^{-1}(\od{f(a)}{\eps}) \in \f_a$,
+	a kako je $\f_a\psj \f_a^0$, onda je i  $f^{-1}(\od{f(a)}{\eps}) \in \f_a^0$, tj. vazhi (2).
+
+        Dokazhimo sada da (2) implicira (3). Neka je $\eps>0$ proizvoljno.
+	Zbog (2) znamo da postoji $\delta>0$ tako da vazhi $$0<|x-a|<\delta\implies |f(x)-f(a)|<\eps.$$ 
+	Za takvo $\delta$ znamo da su pochev od nekog $n_0 \in \N$ svi chlanovi $x_n$ ($n\geq n_0$) u $\delta$ okolini tachke $a$. Dakle, (2) implicira (3).
+
+        Na kraju dokazhimo kontrapoziciju, tj. da $\neg(1)\implies\neg(3)$. 
+        \begin{align*}
+            f\cont a &\iff \neg[(\forall \eps >0)(\exists \delta > 0)|x-a|<\delta \implies |f(x)-f(a)|<\eps]\\
+                      &\iff (\exists \eps >0)(\forall \delta > 0)|x-a|<\delta \land |f(x)-f(a)|\geq\eps\\
+                      &\implies (\exists \eps >0)(\forall n \in \N)|x_n-a|<\frac{1}{n} \land |f(x_n)-f(a)|\geq\eps\\
+                      &\implies \lim_{n\to\infty}x_n=a \land \neg(\lim_{n\to\infty}f(x_n)=f(a)),
+        \end{align*}
+        tj. ako ne vazhi (1), onda ne vazhi ni (3). Naglasimo josh da smo do poslednje implikacije
+	(tj. do chinjenice da iz $(\forall n \in \N)|x_n-a|<\frac{1}{n} \implies \ds{\lim_{n\to \infty}x_n=a}$) doshli pozivajuc1i sa na Arhimedovu aksiomu.
+    \end{proof} 
+    
+    \begin{st}\label{st1nepr} 
+        Za svaku funkciju $f:\R \to \C$, $a\in \R$ i $\zeta \in \C$ sledec1i iskazi su ekvivalentni:
+    \begin{enumerate}
+        \item $\ds{\lim_{x\to a}f(x)=\zeta}$
+        \item Za svaki niz $\niz{x}$ iz $\R\setminus\{a\}$ vazhi \[\lim_{n \to \infty}x_n=a \implies \lim_{n \to \infty}f(x_n)=\zeta \]
+        \item Funkcija \[
+                F(x):=
+            \begin{cases}
+                \begin{aligned}
+                    f(x), x\neq a\\
+                \zeta, x=a
+
+                    \end{aligned}
+                            \end{cases},
+            \]
+            je neprekidna u tachki $a$.
+        \end{enumerate}
+    
+    
+    \end{st}
+    \begin{proof}
+        Dokaz je u potnpunosti analogan dokazu stava \ref{st1nepr}.
+    \end{proof}
+    \begin{tvr}[Princip lokalizacije]
+        Neka je $\f$ filter na skupu $S$. Tada za svaka dva preslikavanja $f,g : S\to \C$ vazhi: \[f=_\f g\implies \lim_\f f=\lim_\f g.\]
+    \end{tvr}
+
+    \begin{proof}
+        Neka je $\eps>0$ proizvoljno i $\ds{\gamma=\lim_\f f}$. Dalje, neka je $X:=\{s\in S\mid |f(s)-\gamma|<\eps\}\in \f$ i $Y:=\{s \in S \mid f(s)=g(s)\} \in \f$. 
+	Onda je $X \cap Y \in \f$, a kako je $X\cap Y\psj \{s \in S \mid |g(s)-\gamma|<\eps\}$, onda je, prema $(F4)$, i $ \{s \in S \mid |g(s)-\gamma|<\eps\}\in \f$,
+	odakle sledi $\gamma=\ds{\lim_\f g}$, shto je i trebalo dokazati.
+    \end{proof}
+
+    \begin{posl}
+
+        Konvergencija niza ne zavisi od konachno mnogo njegovig chanova.
+
+    \end{posl}
+    \begin{posl}
+        Neprekidnost funkcije u tachki $a$ zavisi samo od ponashanja funkcije u okolini tachke $a$
+    \end{posl}
+
+    
+    Primetimo da u definicijama \ref{defnepr} i \ref{deflimfje} zahtevamo da je domen funkcije chitavo $\R$.
+    Ovo chestho nec1e biti sluchaj kada se bavimo funkcijama, stoga bilo i korisno ako mozhemo proshiriti definiciju da vazhi i kada je domen  $S \ps \R$,
+    no ne moramo se ni tu zaustaviti, vec1 mozhemo i definisati chak i za $\C$.
+    
+    \begin{de}
+    Neka je $\K\in \{\R, \C\}$, $S\psj\K$ i $f:S \to \C$. Skup $V\psj \K$ je okolina tachke $a\in \K$ ako 
+    \begin{align}
+        \label{defokolina}
+        (\exists \delta > 0 )\{x\in \K \mid |x-a|\leq \delta\}\psj V
+    \end{align}
+    \end{de}
+
+    Kada je $\K=\R$, onda je skup na levoj strani zapravo otvoren interval $]a-\delta,a+\delta[$,
+    a u sluchaju $\K=\C$ skup na levoj strani je zapravo otvoren disk $\od{a}{\delta}$. Kasnije, u metrichkim prostorima, ovu ulogu c1e igrati otvorne lopte.
+    
+    \begin{de}
+        Ako za svaku okolinu $V$ tachke $a\in \K$ vazhi $(V\setminus \{a\})\cap S \neq \emptyset$, onda kazhemo da je $a$ tachka nagomilavanja skupa $S$.
+    \end{de}
+
+    Slobodnije recheno, $a$ je tachka nagomilavanja skupa $S$, ako svaka okolina tahcke $a$ sadrzhi neku tachku skupa $S$, razlichitu od $a$. 
+    Naglasimo da tachka nagomilavanja mozhe, ali nikako ne mora pripadati skupu $S$. 
+
+    \begin{pr}
+        Tachke nagomilavanja otvorenog intervala $]0,1[$ su sve tachke intervala $[0,1]$, i nijedna vishe.
+    \end{pr}
+    \begin{pr}
+        \label{prtacnagkompl}
+        Tachke nagomilavanja skupa $S=\od{0}{1}\cup \{1+i\}$ su sve tachke skupa $\zd{0}{1}$, i nijedna vishe.
+    \end{pr}
+
+    Tachke koje pripadaju skupu $S$, ali nisu tachke nagomilavanja skupa $S$, nazivamo izolo-vanim tachkama.
+    Npr. u  primeru \ref{prtacnagkompl}, $1+i$ predstavlja jednu izolovanu tachku.
+
+    \begin{tvr}[Ekvivalentna definicija tachke nagomilavanja]
+        Tachka $a \in \K$ je tachka nagomilavnja skupa $S \psj \K$ akko svaka njena okolina sadrzhi beskonachno mnogo tachaka skupa $S$.
+    \end{tvr}
+
+    \begin{proof}
+        Pretpostavimo najpre da svaka okolina tachke $a$ sadrzhi beskonachno mnogo tachaka skupa $S$. Neka je $V$ proizvoljna okolina tachke $a$. 
+	Poshto je $V\cap S$ beskonachan, onda je i skup $(V\setminus\{a\}) \cap S$ takodje beskonachan, pa je samim tim razlichit od $\emptyset$,
+	tj. $a$ jeste tachka nagomilavanja. 
+
+	Obrunto, pretpostavimo da je $a$ tachka nagomilavnja skupa $S$. Pretpostavio suprotno, tj. da postoji okolina $U$ tachke $a$,
+	koja sadrzhi konachno mnogo tachaka skupa $S$, tj. imamo da je skup $(U\setminus\{a\})\cap S=\{a_1,a_2,...,a_n\}$ konachan. 
+	Oznachimo sa $\delta_i=|a-a_i|>0$.
+	Primetimo najpre da ako iz okoline $U$ izbacimo konachno mnogo tachaka, mozhemo napraviti podokolinu
+	$U'$ (tada c1emo u definiciji okoline uzeti $\delta'=\min\{\delta_1,\delta_2,...\delta_n\}>0$, shto postoji jer je skup konachan). 
+	Medjutim, tada je $(U'\setminus\{a\})\cap S=\emptyset$, shto je kontradikcija sa pretpostavkom da je $a$ tachka nagomilavnja.
+    \end{proof}
+
+    \begin{st}
+    	Neka je $\f$ filter na proizvoljnom skupu $T$, $L\psj T$ i $\f[L]=\{X\cap L\mid X \in \f\}$. Dokazati ekvivalenciju:
+	\[\f[L] \text{ je filter na } L \iff \emptyset \notin \f[L].\]
+    \end{st}
+    \begin{proof}
+    	Smer sleva nadesno je trivijalan (filter po definiciji ne sadrzhi prazan skup). 
+	Shto se tiche suprotnog smera, dovoljno je primetiti da su ispunjena svojstva definisanja filtera.
+	Svakako je $(F1)$ tachno zbog $L=L\cap T$, $(F2)$ je tachno po pretpostavci. Proverimo svojstvo $(F3)$. 
+	Neka su $X_L=X\cap L$ i $Y_L=Y\cap L$ chlanovi skupa $\f[L]$ (naglasimo da josh uvek nismo dokazali da je $\f[L]$ filter, 
+	zasad zloubotrebljavamo identichnu oznaku), gde su $X$ i $Y$ chlanovi $\f$.
+	Tada je \[X_L \cap Y_L = (X\cap L) \cap (Y\cap L) = (X\cap Y)\cap L,\]
+	a kako je $X\cap Y \in \f$ onda je i $X_L\cap Y_L\in \f_L$, shto je razlichito od praznog skupa po pretpotsavci.
+
+	Preostalo je josh da dokazhemo svojstvo $(F4)$. Neka je $X\cap L=X_L\in \f[L]$ i $X_L\psj Y_L\psj L$. Treba da dokazhemo da je $Y_L=Y\cap L$, za neko $Y \in \f$, jer to implicira $Y_L \in \f[L]$.
+	Posmatrajmo skup $X\cup Y_L$. Kako je $X\psj X\cup Y_L$, onda je $X\cup Y_L \in \f$, pa je $(X\cup Y_L)\cap L \in \f[L]$. Poshto je 
+	\[(X\cup Y_L)\cap L=(X\cap L)\cup(Y_L\cap L)=X_L\cup Y_L=Y_L,\]
+	onda je $Y_L\in \f[L]$, shto je i trebalo dokazati.
+    \end{proof}
+    \begin{posl}
+    	\label{filterokolinaposl}
+	Neka je $\K\in\{\R,\C\}$ i $S\psj \K$. Ako je $a$ tachka nagomilavanja skupa $S$, onda su $\f_a[S]$ i $\f_a^0[S]$ filteri.	
+    \end{posl}
+
+    Zbog posledice \ref{filterokolinaposl} mozhemo naslutiti kako c1emo definisati neprekidnost i filtere na skupovima drugachijim od $\R$ i $\C$,
+    a pritom, ono shto je josh i vazhnije, mozhemo zakljuchiti da c1e te definicije imati smisla. 
+
+    \begin{de}
+    	\label{defnepropste}
+    	Neka je $\K\in \{\R, \C\}$, $S\psj \K$, $a\in S$ tachka nagomilavnja skupa $S$ i $f:S \to \C$ funkcija. Kazhemo da je $f$ neprekidna u tachki $a$
+	ako je \[\zeta=\lim_{\f_a}f.\] Koistimo oznaku $f\cont a$.
+    \end{de}
+    Kazhemo da je funkcije neprekidna na skupu $A \psj S$ (i oznachavamo sa $f \cont A$) ako je neprekidna u svakoj tachki skupa $A$.
+    \begin{de}
+    	\label{deflimfjeopste}
+    	Neka je $\K\in \{\R, \C\}$, $S\psj \K$, $a\in \K$ tachka nagomilavnja skupa $S$ i $f:S \to \C$ funkcija.
+	Kazhemo da je $\zeta \in \C$ limes funkcije $\f$ u tachki $a$
+	ako je \[\zeta=\lim_{\f_a^0}f.\] 
+    \end{de}
+    Za zapisivanje limesa koristimo iste oznake koje su istaknute nakon definicije \ref{deflimfje}.
+
+    \begin{nap}
+    	Kljuchna razlika u prethodnim definicijama je to shto u definiciji \ref{defnepropste} zahtevamo da tachka nagomilavnja skupa pripada tom skupu (
+	shto je potpuno logichno, jer nema smisla prichati o neprekidnosti funkcije u tachki van domena funkcije), dok u definciji \ref{deflimfjeopste} 
+	zahtevamo samo da je u pitanju tachka nagomilavanja.
+    \end{nap}
+\section{Asimptot\-ske relacije}
+    
+    
+\end{document}
