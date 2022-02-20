@@ -11,9 +11,18 @@
 \usepackage{mathtools} %svashta, npr. za pisanje teksta iznad \iff
 \usepackage{amssymb}%dozvoljava upotrebu raznih simbola puput measuredangle
 \usepackage{color} %koristimo boje
-\usepackage{enumitem,framed} %za leftmargin u itemiz
+\usepackage{enumitem,framed} %za leftmargin u itemize
 \usepackage{indentfirst}
 \usepackage[lmargin=2.0cm, rmargin=2.0cm,tmargin=2.50cm,bmargin=2.50cm]{geometry}
+\usepackage{xr-hyper} %za pravilno koriscenje refeneci u radu sa vise fajlova
+
+\externaldocument{chapters/diferencijabilnost}
+\externaldocument{chapters/elfje}
+\externaldocument{chapters/liminepr}
+\externaldocument{chapters/neodrint}
+\externaldocument{chapters/odrint}
+\externaldocument{chapters/redovi}
+\externaldocument{chapters/zasnivanjerealnihbr}
 
 \usepackage{subfiles} %najbolje ovo na kraju koristiti
 \definecolor{mygreen}{rgb}{0,0.5,0}
@@ -87,7 +96,7 @@
 
 
 
-\title{Analiza 1}
+\title{\textbf{Analiza 1}}
 \author{Ognjen Petrov}
 \date{2022.}
 \begin{document}
