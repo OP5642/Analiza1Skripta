@@ -54,4 +54,128 @@
 }
 %Kraj podesavanja izgleda koda
 \begin{document}
+\section{Primitivna funkcija}
+
+{\de $F$ je primitivna za $f$ na $I$ ($F$ je reshenje diferencijalne jednachine $F'=f$ na $I$), gde je $I \psj \R$ pravi interval $(\sup I > \inf I)$ i $\K \in\{\R, \C\}, f:I\to \K, F:I\to \K $ ako vaz1i:
+ \begin{itemize}
+        \item[(1)] $F$ je neprekidna na $I$
+        \item[(2)] postoji najvishe prebrojiv skup $P\subseteq I$ takav da je: $(\forall x \in I\setminus P) F'(x)=f(x)$.
+\end{itemize} 
+$F$ je tachna primitivna za $f$ na $I$ ako vaz1i:
+\begin{itemize}
+        \item[(1)] $F$ je neprekidna na $I$
+        \item[(2)] $(\forall x \in I) F'(x)=f(x)$.
+\end{itemize}
+}
+{\pr Neka je $f:\mathbb{R}\to \mathbb{R}, f(x)= \sign x$ i $F:\mathbb{R}\to \mathbb{R}, F(x)= |x|$. $F$ je neprekidna na $\mathbb{R}$ i vaz1i $F'(x)=f(x)$ za $x \in \mathbb{R}\setminus \{0\}$ stoga sledi da je $F$ primitivna za $f$ na $\mathbb{R}$}.
+{\pr Neka je $f$ karakteristichna funkcija intervala $I=[a,b]$, odnosno funkcija $f:\mathbb{R}\to \mathbb{R}$ i $f(x)=\chi_{[a,b]}(x)$, to jest: $$
+f(x)=\begin{cases}
+			1, & x\in I\\
+            0, & x\in \mathbb{R}\setminus I
+		 \end{cases}$$
+i neka je $F$ funkcija zadata na sledec1i nachin:
+$$F(x)=\begin{cases}
+			0, & x<a\\
+            x-a, & a\leqslant x \leqslant b\\
+            b-a, & x>b
+		 \end{cases}$$
+Kako je $F$ neprekidna na $\mathbb{R}$ i $F'(x)=f(x)$ za $x\in\mathbb{R}\setminus\{a,b\}$ zakljuchujemo da je $F$ primitivna za $f$ na $\mathbb{R}$.}
+{\pr Neka su $f$ i $F$ funckije zadate na sledec1i nachin:
+$$F:\mathbb{R}\to \mathbb{R},\hspace{1cm} F(x)=\begin{cases}
+			x^2 \sin \frac{1}{x}, & x\ne 0\\
+            0, & x=0
+		 \end{cases}$$
+$$f:\mathbb{R}\to \mathbb{R},\hspace{1cm} f(x)=\begin{cases}
+			2x \sin \frac{1}{x} - \cos \frac{1}{x}, & x\ne 0\\
+            0, & x=0
+		 \end{cases}$$
+Funkcija $F$ je neprekidna na $\mathbb{R}$ jer je neprekidna u nuli $\ds{(\lim_{x\to 0^{+}}F(x)=\lim_{x\to 0^{-}}F(x)}=F(0) )$, a u tachkama razlichitim od nule neprekidna je kao kompozicija neprekidnih. Primetimo da je $F$ tachna primitivna za $f$ jer uvek vaz1i $F'(x)=f(x)$}.
+{\pr Neka je $I\psj \mathbb{R}$ otvoren interval i $F:I\to\mathbb{R}$ konveksna funkcija. Odatle zakljuchujemo da $F\in \mathscr{D}_{+}(I) \cap \mathscr{D}_{-}(I)$ i $F'_{+}, F'_{-}$ rastu, pa sledi da $F'_{+}$ i $F'_{-}$ imaju najvishe prebrojivo mnogo prekida i svi oni su prekidi prve vrste (ranije dokazano kod monotonosti). Kako iz 
+$$F'_{-}C_{+}a \implies (\forall x \in I) (x>a \implies F'_{-}(a)\leqslant F'_{+}(a) \leqslant F'_{-}(x)),$$
+prelaskom na $\ds{\lim_{x\to a^{+}}}$ dobijamo $F'_{+}(a) = F'_{-}(a)$, shto znachi da je $F \mathscr{D} a$ u svakoj tachki $a\in I$ u kojoj je $F'_{-}C_{+}a$, odnosno svuda osim u prebrojivo mnogo tachaka. Definishimo skup $P$ na sledec1i nachin: $P=\{a\in I \hspace{0.3cm} | \hspace{0.3cm} \lnot F'_{-}C_{+}a\} $ i 
+$$f(x)=\begin{cases}
+			F'(x), & x\in I\setminus P\\
+            \textrm{bilo shta}, & x\in P,
+		 \end{cases}$$
+tada je $F$ primitivna za $f$. Stoga, svaka konveksna funkcija je primitivna.}\\ \\
+\nap Navodimo i opshte tvrd1enje uz prethodne primere.Ako je:
+
+\begin{itemize}
+        \item[\cdot] $I\psj \R$ pravi interval $(\sup I > \inf I)$
+        \item[\cdot] $P\psj I$ najvishe prebrojiv podskup
+        \item[\cdot] $F:I\to \C , F\in C(I) \cup \mathscr{D}(I\setminus P),$
+\end{itemize}
+onda je $F$ primitivna funkcija za $f:I\to \C$
+$$f(x)=\begin{cases}
+			F'(x), & x\in I\setminus P\\
+            \textrm{bilo shta}, & x\in P
+		 \end{cases}$$
+\begin{tvr}
+Funkcija $F:I\to \C$ je primitivna za $f:I \to \C$ ako i samo ako je $Re F$ primitivna za $Re f$ i $Im F$ primitivna za $Im f$.
+\end{tvr}
+\begin{tvr}
+\textbf{(Jedinstvenost primitivne funkcije)} Neka je funkcija $F:I \to \C$ primitivna za $f:I \to \C$. Tada je funkcija $G: I\to \C$ primitivna za $f$ ako i samo ako je 
+$$F-G\equiv const$$
+\end{tvr}
+\begin{proof}
+Smer $\impliedby$ sledi iz $(\textrm{\latin{const}})'=0$ i neprekidnosti funkcije $F$ na intervalu $I$. Smer $\implies$ dokazujemo na sledec1i nachin. Iz uslova tvrd1enja znamo da je $F'=f$ na $I\razl P_1$ i $G'=f$ na $I\razl P_2$, gde su $P_1$ i $P_2$ najvishe prebrojivi, i $F, G \in C(I)$. Sledi da je $(F-G)'=F'-G'=f-f=0$ na $I\razl (P_1 \cup P_2)$, shto jeste komplement najvishe prebrojivog skupa poshto je unija dva najvishe prebrojiva skupa najvishe prebrojiv skup. Na osnovu opshte teoreme srednje vrednosti zakljuchujemo da je $F-G= const$.
+\end{proof}
+\nap Predhodno tvrd1enje nam zapravo govori da ukoliko su $F_1$ i $F_2$ dve primitivne funkcije funkcije $f$ na intervalu, tada je razlika $F_2(x)-F_1(x)$ konstantna. Vaz1no je obratiti paz1nju da su primitivne na intervalu. Zaista, neka su date funkcije 
+$$ F_1(x)=x^2 \hspace{0.6cm} \text{i} \hspace{0.6cm} F_2(x)= \begin{cases}
+			x^2, & x<0\\
+            x^2+1, & x>0
+		 \end{cases}$$
+na skupu $(-\infty,0) \cup (0,+\infty)$ koji nije intreval. Tada je $F_1'(x)=F_2'(x)=2x$ za svako $x$ iz $(-\infty,0) \cup (0,+\infty)$, med1utim, $F_2(1)-F_1(1)=1\ne 0 = F_2(-1)-F_1(-1)$, te razlika $F_2-F_1$ nije konstantna.
+\begin{posl}
+Neka su $F, G:I \to \C$ primitivne za $f:I\to \C$. Tada vaz1i:
+  \begin{itemize}
+        \item[(1)] $(\exists x \in I)$  $F(x)=G(x) \iff (\forall x \in I)$  $F(x)=G(x)$
+        \item[(2)] $F(x_1)-F(x_2) = G(x_1)-G(x_2)$ za sve $x_1, x_2 \in I$.
+  \end{itemize} 
+\end{posl}
+
+\begin{posl}
+Ako je funkcija $F:I \to \C$ primitivna za $f: I \to \C$, onda za svako $x_0 \in I$ i svako $y_0 \in \C$ postoji tachno jedna primitivna funkcija $\phi : I \to \C$ za $f$ takva da je $\phi (x_0) = y_0$. Pri tome je $\phi(x)=F(x)-F(x_0)+y_0$.
+\end{posl}
+\newpage
+\subsection{Tablica primitivnih funkcija}
+\begin{center}
+\vspace{0.5cm}
+\begin{tabular}{||c  c  c  c||} 
+ \hline
+ $f(x)$ & $F(x)$ & $\text{\latin {dom }}F$ & napomena \\ [0.5ex] 
+ \hline\hline
+ 0 & $c$ & $\R$ & $c\in \C$ \\ [2ex] 
+ %\hline
+ $x^{\alpha}$ & $\frac{1}{\alpha +1} x^{\alpha +1}$ & zavisi od $\alpha$ & $\alpha \in \R , \alpha \ne -1$ \\[2ex] 
+ %\hline
+ $\frac{1}{x}$ & $\log|x|$ & $\R^{*}$ &  \\[2ex] 
+ %\hline
+ $\frac{1}{1+x^2}$ & $\arctg x$ & $\R$ & $\frac{\pi}{2} -\arctg x$ \\[2ex] 
+ %\hline
+  $\frac{1}{1-x^2}$ & $\frac{1}{2} \log |\frac{1+x}{1-x}|$ & $\R \razl \{-1,1\} $ &  \\ [2ex] 
+ $\frac{1}{\sqrt{1-x^2}}$ & $\arcsin x$ & $[-1,1]$ & $\frac{\pi}{2}-\arccos x$ \\ [2ex] 
+ %\hline
+ $\frac{1}{\sqrt{1+x^2}}$ & $\log |x+\sqrt{x^2+1}|$ & $ \R $ & $\text{\latin {arcsh }} x$\\[2ex] 
+ %\hline
+ $\frac{1}{\sqrt{x^2-1}}$ & $\log |x+\sqrt{x^2-1}|$ & $\R\razl(-1,1)$ & $\text{\latin {arcch }} x, |x|\geqslant 1$ \\[2ex] 
+ %\hline
+ $e^{\xi x}$ & $\frac{1}{\xi} e^{\xi x}$ & $\R$ & $\xi \in \C^{*}$ \\[2ex] 
+ %\hline
+  $a^x$ & $\frac{1}{\log a} a^x $ & $\R $ & $a\in \R, a>0, a\ne 1$ \\ [2ex] 
+  $\cos x$ & $\sin x$ & $\R$ &  \\ [2ex] 
+ %\hline
+ $\sin x$ & $ -\cos x$ & $\R$ &\\[2ex] 
+ %\hline
+ $\sec^2 x$ & $\tg x$ & $\R \razl \frac{\pi}{2}(2\Z+1)$ &  \\[2ex]
+ %\hline
+ $\cosec^2 x$ & $-\ctg x$ & $\R \razl \pi \Z$ &  \\[2ex] 
+ %\hline
+  $\ch x$ & $\sh x$ & $\R $ &  \\ [2ex] 
+ %\hline
+  $\sh x$ & $\ch x$ & $\R $ &  \\ [2ex] 
+ \hline
+\end{tabular}
+\end{center}
+\section {Neodred1eni integral}
 \end{document}
