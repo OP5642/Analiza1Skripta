@@ -1,4 +1,4 @@
-\documentclass[../main_og.tex]{subfiles}
+\documentclass[../maing.tex]{subfiles}
 
 \usepackage[OT2]{fontenc}
 \usepackage[english,serbianc]{babel} 
@@ -97,7 +97,7 @@
 \end{pmatrix}$. Tada vazhi $f\mathrel{\rho_\f}g$ i $g\mathrel{\rho_\f}f$, ali je $f\neq g$.
 
     {\posl Ako je $\rho$ relacija ekvivalencije, onda je je $\rho_\f$ relacija ekvivalencije. Isto tvrdjenje ne vazhi ako je $\rho$ relacija poretka}
-    {\de Neka je $\zeta \in \C$, $r \in \R$ i $r>0$. Otvoreni disk sa centrom u $\zeta$ poluprechnika $r$ je skup $\od{\zeta}{r}:=\{z\in \C\mid |z-\zeta|<r\}$. Slichno definishemo i zatovreni disk $\zd{\zeta}{r}:=\{z\in \C\mid |z-\zeta|\leq r\}$. }
+    {\de Neka je $\zeta \in \C$, $r \in \R$ i $r>0$. Otvoreni disk sa centrom u $\zeta$ poluprechnika $r$ je skup $\od{\zeta}{r}:=\{z\in \C\mid |z-\zeta|<r\}$. Slichno definishemo i zatovreni disk $\zd{\zeta}{r}:=\{z\in \C\mid |z-\zeta|\mj r\}$. }
     {\de Neka je $\f$ filter na $S$ i $f\in \C^S$ preslikavanje iz $S$ u $\C$. Kompleksan broj $\zeta$ je limes preslikavanja $f$ po filteru $\f$ ako za sve $\varepsilon>0$ vazhi $|f-\zeta|<_\f \varepsilon$, tj. \[\zeta= \lim_\f f \jpd (\forall \varepsilon >0)|f-\zeta|<_\f\varepsilon.\]}
     Ekvivalentno: 
     \begin{align*}\zeta=\lim_\f f &\iff (\forall \eps>0) f^{-1}(\od{\zeta}{\eps})\in \f\\
@@ -220,7 +220,7 @@
     Neka je $\K\in \{\R, \C\}$, $S\psj\K$ i $f:S \to \C$. Skup $V\psj \K$ je okolina tachke $a\in \K$ ako 
     \begin{align}
         \label{defokolina}
-        (\exists \delta > 0 )\{x\in \K \mid |x-a|\leq \delta\}\psj V
+        (\exists \delta > 0 )\{x\in \K \mid |x-a|\mj \delta\}\psj V
     \end{align}
     \end{de}
 
