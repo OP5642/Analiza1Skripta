@@ -54,4 +54,48 @@
 }
 %Kraj podesavanja izgleda koda
 \begin{document}
+
+\section{Rimanov integral}
+
+    Cilj je definisati (eventualno i izrachunati) povrshinu ispod grafika zadate funk-cije $f:[a,b]\to \R$ (bitno je da je funkcija na intervalu). 
+    Ovo je problem koji su i Stari Grci, Arhimed i Eudoks, umeli da reshe za prilichno
+    shiroke klase funkcija.
+
+    Moguc1e je pristpupiti problemu sa vishe gledishta, ili preko posmatranja limesa, ili preko supremuma i infimuma. Prvi nachin je Rimanov, a drugi Darbuov i oba ima-ju
+    svoje mane, kao i prednosti. Kada dokazhemo njihovu ekvivalenciju, moc1i c1emo da upotrebljavamo oba u zavisnosti od toga koji nam vishe odgovara u datoj situaciji.
+
+\subsection{Veza sa primitivnom funkcijom}
+
+    Pretpostavimo da je funkcija $f$ neprekidna na intervalu $[a,b]$ i oznachimo sa $P(x)$ povrshinu ispod grafika funkcije $f$ na intervalu $[a,x]$.
+    Dakle, ako imamo $h \to 0$, onda je i $f(x+h)\to f(x)$, odakle sledi $P(x+h)-P(x) \sim f(x) h$ (tj. razliku povrshina posmatramo zapravo kao povrshinu pravougaonika).
+    Odavde imamo da je \[f(x) \sim \dfrac{P(x+h)-P(x)}{h}\xrightarrow{h\to 0}P'(x)\\
+	\implies P'(x)=f(x).
+    \]
+    Dakle, ako je $f\cont [a,b]$, $P$ je primitivna za $f$.
+
+    Naglasimo da je ovo neformalan dokaz, sluzhi nam chisto radi intuicije. Ovo tvrdjenje c1emo kasnije nazivati osnovnom teoremom integralnog rachuna.
+    Ovo nam daje intuitivnu predstavu o sledec1oj definiciji.
+
+    \begin{de}
+    	Neka je $F:[a,b]\to \C$ primitivna funkcija neprekidne funkcije $f:[a,b]\to \C$. Njutnov integral funkcije $f$ je 
+	\[ \int_a^bf(x)dx=F(b)-F(a).\]
+    \end{de}
+    Iz jedinstvenosti primtivne funkcije $F$ za $f$ na intervalu (do na aditivnu konstan-tu) sledi da je definicija dobra, tj. da Njutnov integral ne zavisi od odabira
+    primitivne funkcije.
+
+    Razlika $F(b)-F(a)$ se oznachava i sa $F|_a^b$, $F(x)|_a^b$, $F(x)|_{x=a}^{x=b}$, a umesto $\int_a^bf(x)dx=F(x)|_a^b$ pishemo $\int_a^bf=F|_b^a$.
+    
+    No, prirodno je postaviti pitanje kada uopshte postoji primitvna funkcija? Odavde je jasno da za neprekidne postoji primitivna funkcija, ali to je veoma
+    jaka pretpostvka. Iz datih definicija i primera ne mozhemo da zakljuchimo kada postoji primitivna funkcija date funkcije. Odogovor c1e nam dati formalna definicija
+    Rimanovog integrala.
+
+    Mozhemo formulisati i opsthiji problem. Naime, zashto se zausaviti na povrshini? Chesto c1e nas zanimati i zapremina pa chak i vishe dimenziona zapremina. No pre toga
+    treba definisati pojam analogan intervalu u vishe dimenzija.
+
+    \begin{de}
+    	Neka su $\mcl{I}_1,\mcl{I}_2,\dotso,\mcl{I}_n$ intervali u $\R$. Dekartov proizvod $\mcl{J}=\mcl{I}_1 \times \mcl{I}_2 \times \dotso \times \mcl{I}_n$ nazivamo 
+	$n$-dimenzionim	kvadrom.
+    \end{de}
+
+
 \end{document}
