@@ -178,4 +178,194 @@ Ako je funkcija $F:I \to \C$ primitivna za $f: I \to \C$, onda za svako $x_0 \in
 \end{tabular}
 \end{center}
 \section {Neodred1eni integral}
+\begin{de}
+\textbf{Neodred1eni integral} funkcije $f:I \to \C$ je skup svih njenih
+primitivnih funkcija na $I$. Oznaka: $\int f(x) dx$ ili $\int f$.
+\end{de}
+Ako je $F:I \to \C$ neka primitivna funkcija za $f$ na $I$, onda
+je $$\int f(x) dx = \{F+C | c \in \C\}.$$
+\begin{tvr}
+(\textbf{Lokalnost primitivne funkcije}) Neka je $I\psj \R$ ogranichen interval.
+Za funkcije $f:I\to \C$ i $F:I \to \C$ sledec1i uslovi su ekvivalentni:
+\begin{itemize}
+        \item[(a)] $F$ je primitivna za $f$ na $I$
+        \item[(b)] $F$ je primitivna za $f$ na svakom kompaktnom
+        intervalu $K\psj I$
+        \item[(v)] Za svako $x \in I$ postoji otvoren interval $x \in \math{J_x}$ na kom je $F$ primitivna za $f$
+\end{itemize} 
+\end{tvr}
+\begin{proof}
+Kako je $P\psj I$ najvishe prebrojiv skup, zakljuchujemo da i $P\cap K$ takod1e najvishe prebrojiv. 
+Iz toga i lokalnosti neprekidnosti i diferencijabilnosti zakljuchujemo da (a) implicira (b).\\
+Dokaz1imo da (b) implicira (a). Neka je $K_n$ rastuc1i (u odnosu na inkluziju) niz kompaktnih intervala takav da je $I=\cup_{n\in \N} K_n$.
+Takav niz uvek postoji, jer ako je $a_{\infty} = \inf I$ i $b_{\infty} = \sup I$,
+onda postoje nizovi $a_n$ i $b_n$ u $I$ takvi da vaz1i:
+\begin{itemize}
+        \item[\cdot] $a_{\infty} = \ds{\lim_{n\to \infty}a_n}$,
+        $b_{\infty} = \ds{\lim_{n\to \infty}b_n}$
+        \item[\cdot] $a_{\infty} \in I \implies (\forall n \in \N) a_n=a_{\infty}, b_{\infty} \in I \implies (\forall n \in \N) b_n=b_{\infty}$
+\end{itemize} 
+Tada je $K_n:=[a_n,b_n]$ traz1eni niz. Iz (b) sledi da je za svako $n\in \N$ $F|_{K_n}$ primitivna za $f|_{K_n}$.
+Odatle sledi da je za svako $n\in \N$ $F|_{K_n}$ neprekidna i za neki najvishe prebrojiv skup $P_n\psj K_n$
+vaz1i $$x\in K_n \razl P_n \implies (F|_{K_n})'(x)=f|_{K_n}(x).$$ 
+Kako je $I=\cup_{n\in \N} K_n$ zakljuchujemo da za $x \in I$ postoji prirodan broj n takav da $x \in K_n$.
+Funkcija $F|_{K_n}$ je neprekidna kao primitivna, a odatle koristec1i se poznatim konceptom lokalnosti neprekidnosti zakljuchujemo da je $F\cont x$.
+Oznachimo sa $P_{\infty}=\cup_{n\in \N}P_n$ najvishe prebrojiv skup. Tada ako $x\in I \razl P_{\infty}$ onda $x\in I \razl \cup_{n\in \N}P_n$.
+Koristec1i De-Morganove zakone dobijamo $x\in \cap_{n\in \N}(I\razl P_n)$. Odatle sledi da $(F|_{K_n})'(x)=f|_{K_n}(x)$, odnosno $F'(x)=f(x)$, zbog lokalnosti diferencijabilnosti.\\
+Trivijalno je da (a) implicira (v), uzmimo $\I_x = (\inf I, \sup I)$. Da iz (v) sledi (b) dokazujemo na sledec1i nachin. Neka je $K$ kompaktan interval i $\I_x$ kao u (v),
+zakljuchujemo da $$(\forall x \in I)(\exists j \in \{1, \dots n\}) x\in \I_{x_j}.$$
+Tada pod pretpostavkom (v) sledi da $(\forall j) F\cont \I_{x_j}$ i $F'=f$ na $\I_{x_j}\razl P_j$ za neki najvishe prebrojiv skup $P_j \psj \I_{x_j}$.
+Zakljuchujemo da $F\cont I$ i $F'=f $ na $I\razl
+\cup_{j=1}^n P_j$.
+\end{proof}
+\begin{tvr}
+(\textbf{Linearnost integrala}) Neka je:
+\begin{itemize}
+        \item[\cdot] $F:I\to \C$ primitivna za $f:I\to \C$
+        \item[\cdot] $G:I\to \C$ primitivna za $g:I\to \C$
+        \item[\cdot] $\alpha, \beta \in \C$
+\end{itemize}
+Tada je $\alpha F + \beta G:I\to \C$ primitivna za $\alpha f + \beta g: I \to \C$.
+\end{tvr}
+\begin{proof}
+Dokaz sledi iz linearnosti neprekidnosti, linearnosti izvoda i chinjenice da je unija dva najvishe prebrojiva skupa najvishe prebrojiv skup.
+\end{proof}
+\begin{posl}
+Za $f,g:I \to \C$ i $\alpha, \beta \in \C$ je
+$$\int (\alpha f(x) + \beta g(x)) dx = \alpha \int f(x) dx + \beta \int g(x) dx$$
+Specijalno, $$\int f(x) dx = \int \Re f(x) dx + i\int \Im f(x)dx.$$
+\end{posl}
+\begin{pr}
+$\int \tg^2 x dx = \int (\sec^2 x - 1) dx = \int \sec^2 x dx - \int dx = \tg x - x + C$
+\end{pr}
+\begin{pr}
+$\int \frac{x^2}{1+x^2}dx= \int (1-\frac{1}{1+x^2})dx=\int dx - \int \frac{1}{1+x^2}dx= x-\arctg x +C$.
+\end{pr}
+\begin{pr}
+$a,b \in \R$ 
+\begin{eqnarray*}
+ \int e^{ax} \cos{bx} dx+ i \int e^{ax} \sin{bx} dx&=& \int e^{(a+ib)x} dx\\
+ &=& \frac{1}{a+ib} e^{(a+ib)x}+C \\
+ &=& \frac{1}{a^2+b^2}(a-ib) e^{(a+ib)x}+C \\
+ &=& \frac{e^{ax}}{a^2+b^2}(a-ib)(\cos bx + i \sin bx)+C
+\end{eqnarray*}
+Izjednachavanjem realnog dela sa realnim i imaginarnog sa imaginarnim dobijamo:
+$$\int e^{ax} \sin bx dx=\frac{e^{ax}}{a^2+b^2}(a \sin bx - b \cos bx)+C$$
+$$\int e^{ax} \cos bx dx=\frac{e^{ax}}{a^2+b^2}(a \cos bx+b \sin bx) +C$$
+\end{pr}
+\nap U poslednjem primeru smo koristili identitet:
+$$e^{ax}\cdot e^{ibx}=e^{(a+ib)x}$$ 
+Iz Ojlerovog identiteta
+$$e^{ix}=\cos x+i \sin x=\text{\latin {cis}}\hspace{0.1cm} x$$
+sledi $\frac{d}{dx} e^{ix}=i e^{ix}$. Neka je $f:\R \to \C$,
+$f(x)=e^{ax}e^{ibx}-e^{(a+ib)x}$. Tada je $f'(x)=0$ pa je $f\equiv \const$. Kako je $f(0)=0$, sledi da je $f\equiv 0$.
+\subsection{Osnovni metodi izrachunavanja neodred1enih integrala}
+\begin{tvr}
+(\textbf{Parcijalna integracija}) Neka su $F,G:I\to \C$ primitivne funkcije (shto znachi da su neprekidne na $I$
+i diferencijabilne na komplementu najvishe prebrojivog skupa). Tada, ako jedna od funkcija $F'G$ i $FG'$ ima primitivnu, imac1e je i druga i vaz1ic1e
+$$\int FG' = FG - \int F'G$$
+\end{tvr}
+\begin{proof}
+Neka su $F,G$ primitivne, odnosno 
+$F\in \cont(I) \cap \mathit D(I\razl P), G\in \cont(I) \cap \mathit D(I\razl T)$, gde su $P$ i $T$ najvishe prebrojivi skupovi.
+Tada je i $P \cup T$ najvishe prebrojiv skup i vaz1i $\forall x \in I \razl (P\cup T) (FG)'(x)=F'(x)G(x)+F(x)G'(x)$. Odatle sledi da ukoliko $F'G$ ima primitivnu,
+onda je ima i $FG'$ i vaz1i $\int FG' = FG - \int F'G$. 
+\end{proof}
+\begin{posl}
+Ako $f:I\to \C$ ima primitivnu, onda je 
+$$\int f(x) dx=x f(x) - \int x f'(x) dx.$$
+\end{posl}
+
+\begin{pr}
+\begin{eqnarray*}
+ \int \log x dx = x \log x - \int x (\log x)' dx 
+ &=& x\log x - \int x \cdot \frac{1}{x} dx \\
+ &=& x \log x - x + C
+\end{eqnarray*}
+\end{pr}
+
+\begin{pr}
+\begin{eqnarray*}
+ \int \arcsin x dx = x \arcsin x - \int x (\arcsin x)' dx 
+ &=& x\arcsin x - \int \frac{x}{\sqrt{1-x^2}}dx \\
+ &=& x \arcsin x +\sqrt{1-x^2} + C
+\end{eqnarray*}
+\end{pr}
+
+\begin{pr}
+\begin{eqnarray*}
+ \int \sin \log x dx &=& x \sin \log x - \int x (\sin \log x)' dx\\ 
+ &=& x\sin \log x - \int x \cdot \cos \log x \cdot \frac{1}{x}dx \\
+ &=& x\sin \log x - \int \cos \log x  dx \\
+ &=& x\sin \log x - x \cos \log x + \int x \cdot (-\sin \log x) \cdot \frac{1}{x}dx \\
+ &=& x(\sin \log x -  \cos \log x) - \int \sin \log x  dx \\
+\end{eqnarray*}
+Odatle dobijamo da je
+$$2 \int \sin \log x = x(\sin \log x -  \cos \log x) + C$$
+Odnosno
+$$\int \sin \log x = \frac{x}{2}(\sin \log x - \cos \log x) + C$$
+\end{pr}
+\begin{tvr}
+(\textbf{Uopshtena parcijalna integracija}) Neka su funkcije $F^{(n)}$
+i $G^{(n)}$ primitivne. Ako jedna od funkcija $F^{(n+1)}G$ i $FG^{(n+1)}$
+ima primitivnu, onda je ima i druga i vaz1i:
+$$\int FG^{(n+1)} = \sum_{j=0}^{n} (-1)^j F^{(j)} G^{(n-j)} + (-1)^{n+1} \int F^{(n+1)} G.$$
+\end{tvr}
+\begin{proof}
+Iz Lajbnicovog pravila sledi
+\begin{eqnarray*}
+ \left(\sum_{j=0}^n(-1)^jF^{(j)}G^{(n-j)}\right)' &=& \sum_{j=0}^n(-1)^j\left(F^{(j+1)}G^{(n-j)}+F^{(j)}G^{(n-j+1)}\right)\\ 
+ &=& \sum_{j=0}^n(-1)^j F^{(j+1)}G^{(n-j)}+\sum_{j=0}^n(-1)^j F^{(j)}G^{(n-j+1)}\\
+ &=& FG^{(n+1)}+(-1)^n F^{(n+1)}G \\
+\end{eqnarray*}
+$\implies$ Ako $F^{(n+1)}G$ ima primitivnu imac1e je i $FG^{(n+1)}$ i
+vaz1ic1e
+$$\int FG^{(n+1)} = \sum_{j=0}^{n} (-1)^j F^{(j)} G^{(n-j)} + (-1)^{n+1} \int F^{(n+1)} G.$$
+\end{proof}
+\begin{tvr}
+(\textbf{Smena promenljive}) Neka vaz1i:
+\begin{itemize}
+        \item[(1)] $T\psj \R, X\psj \R$ su pravi intervali
+        \item[(2)] $F:X \to \C$ je primitivna za $f:X\to \C$
+        \item[(3)] $\varphi:T\to X$ je primitivna
+        \item[(4)] $f$ je neprekidna ili je $\varphi$ strogo monotona
+\end{itemize}
+Tada je $F\circ \varphi:F\to \C$ primitivna za $(f\circ \varphi)\cdot \varphi':T\to \C$, tj. $\int(f\circ \varphi)\cdot \varphi'=F\circ \varphi +C$
+\end{tvr}
+Dato tvrd1enje moz1e se formulisati i na sledec1i nachin:
+\begin{tvr}
+Neka je na intervalu $(a,b)$ 
+$$\int f(x) dx=F(x)+C$$
+i neka je funkcija $\varphi:(\alpha, \beta)\to(a,b)$ neprekidno diferencijabilna (tj. diferencijabilna, sa neprekidnim prvim izvodom) i na. Tada je
+$$\int(f\circ \varphi(t))\cdot \varphi'(t)=F\circ \varphi(t) +C
+\hspace{0.3cm} (*)$$
+\end{tvr}
+Jednakost $(*)$ dobija se diferenciranjem obe strane i primenom pravila za izvod sloz1ene funkcije. Ona je u osnovi metoda izrachunavanja integrala smenom promenljive koji se sastoji u sledec1em. 
+Ukoliko z1elimo da izrachunamo integral oblika $\int(f\circ \varphi(t))\cdot \varphi'(t)$ smenom $x=\varphi(t), dx=\varphi'(t) dt$
+dobijamo integral koji moz1e da bude jednostavniji od polaznog.
+\begin{pr}
+(\textbf{Linearna smena promenljive}) Neka je $F:I\to \C$ primitivna
+za $f:I\to \C$, $a\in \R^*, b \in \R$. Tada je $\frac{1}{a}F(ax+b)$
+primitivna za $f(ax+b)$ na $\I=\frac{1}{a}(I-b)$ i
+$$\int f(ax+b) dx=\frac{1}{a}F(ax+b)+C.$$
+Funkcija $\varphi:\I \to I$ definisana kao $\varphi(x)=ax+b$ je strogo monotona i
+diferencijabilna. Iz prethodnog tvrd1enja sledi da je 
+$F\circ \varphi(x)=F(ax+b)$ primitivna funkcija za $f\circ \varphi \cdot \varphi'(x)=f(ax+b)\cdot a ,$ pa je $\frac{1}{a}F(ax+b)$ 
+primitivna za $f(ax+b)$.
+\end{pr}
+\begin{pr}
+Neka je $f:I\to \R$ neprekidna, $0\notin f(I), P\psj I$ najvishe prebrojiv i $f\in \it{D} (I\razl P)$. Tada je 
+$$\int \frac{f'}{f}=\log|f|+C.$$
+Neka je $g(x)=\log|x|$, $gC\R^*$, $f(I)\psj \R^*$. Odatle sledi da je
+$\log|f|=g\circ f \in \cont(I)$. Iz diferencijabilnosti funkcije $g$
+na skupu $\R^*$ i diferencijabilnosti funkcije $f$ na $I\razl P$ zakljuchujemo da je $g\circ f$ diferencijabilna na $I
+\razl P$.
+Kako za $x \in I\razl P$ vaz1i $(\log|f|)'=\frac{f'}{f}$ sledi da je $\log|f|$ primitivna za $\frac{f'}{f}$.
+\end{pr}
+\begin{pr}
+$$\int \frac{1}{\sin x} dx = \int \frac{1}{2 \sin{\frac{x}{2}}\cos{\frac{x}{2}}}dx = \int \frac{1}{2} \cdot 
+\frac{1}{\cos^2{\frac{x}{2}}} \cdot \frac{1}{\tg{\frac{x}{2}}} dx
+= \int (\tg\frac{x}{2})'\frac{1}{\tg\frac{x}{2}} dx = \log|\tg\frac{x}{2}|+C$$
+
+\end{pr}
 \end{document}
