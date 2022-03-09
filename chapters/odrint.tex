@@ -127,7 +127,7 @@
     Identifikujemo $\mcl{P}\in \mcl{P}_\mcl{J}$ sa $(\mcl{P},\emptyset)\in \widetilde{\mcl{P}}_\mcl{J}$ i smatramo da je $\mcl{P}_\mcl{J}\psj\widetilde{\mcl{P}}_\mcl{J}$
     
     \begin{de}
-    	Parametar podele $\mcl{P}=(\mcl{P}_1,\mcl{P}_2,\dotso, \mcl{P}_n)$ (u oznaci $\lambda(P)$) je maksimum duzhina svih podeonih intervala podela $\mcl{P}_1,\mcl{P}_2,\dotso, \mcl{P}_n$.
+    	Parametar podele $\mcl{P}=(\mcl{P}_1,\mcl{P}_2,\dotso, \mcl{P}_n)$ (u oznaci $\lambda(\mcl{P})$) je maksimum duzhina svih podeonih intervala podela $\mcl{P}_1,\mcl{P}_2,\dotso, \mcl{P}_n$.
     \end{de}
 
     Neka je, za $\delta>0$:
@@ -136,4 +136,35 @@
     \[\b_\mcl{J}:=\{B_\delta \mid \delta > 0\}\]
     baza filtera na $\widetilde{\mcl{P}}_\mcl{J}$. 
 
+    Najpre, primetimo da je uopshte smisleno govoriti o filteru u ovoj situaciji (tj. o bazi filtera). Ochigledno, svaki $B_\delta$ je podskup od $\widetilde{\mcl{P}}_\J$,
+    pa $\b_\J$ zaista jeste familija podskupova $\widetilde{\mcl{P}}_\J$. Najpre, primetimo da za dovoljno veliko $\delta$ vazhi $B_\delta=\widetilde{\mcl{P}}_\J$, jer je 
+    kvadar $\J$ konachan skup (mozhemo uzeti da $\delta$ bude najduzha njegova ivica uvec1ana za 1, zbog uslova da je paramtar podele strogo manji od $\delta$, ovo ima smisla
+    jer prichamo o ogranichenim kvadrima). Takodje, evidentno je da je moguc1e izabrati \zn dovoljno finu podelu kvadra $\J$\zng, pa je nemoguc1e da je bilo koji od
+    $B_\delta = \emptyset$, pa $\emptyset \notin \b_\J$. Dalje, familija $\b_\J$ jeste zatvorena u odnosu na presek jer je 
+    \[B_{\delta_1}\cap B_{\delta_2}=B_{\min\{\delta_1,\delta_2\}}.\]
+    Dakle, $\b_\J$  zaista jeste baza filtera na $\widetilde{\mcl{P}}_\mcl{J}$. Filter njome generisan oznachavamo sa $\f_\J$ i on c1e biti od kljuchnog znachaja za 
+    definisanje integrala.
+
+    \begin{pr}
+    	\[X \in \f_\J \iff (\exists \delta > 0) (\lambda(\mcl{P})<\delta \implies (\mcl{P},c)\in X)\]
+    \end{pr}
+
+    \begin{proof}
+    	Kao shto smo ranije videli, filter generishemo od baze uzimanjem josh svih nadsku-pova chlanova baze. U ovom sluchaju chlanovi baze su skupovi svih podela
+	chiji je paramtar manji od nekog $\delta>0$. Dakle, svaki chlan filtera c1e biti neki skup podela, koji sadrzhi barem one podele kojima je paramtar
+	manji od nekog $\delta>0$, a sadrzhi i josh neke podele, koje nama nisu od znachaja. Prethodna rechenica je neformalni zapis trazhenog tvrdjenja.
+    \end{proof}
+
+    Filter $\f_\J[\mcl{P}_\J]$ na $\mcl{P}_\J$ indukovan filterom $\f_\J$ na $\widetilde{\mcl{P}}_\J$ oznachavamo krac1e istom oznakom $\f_\J$. Ovo ima smisla da radimo jer
+    smo vec1 naglasili da identifikujemo podele bez uochenih tachaka kao podele sa praznim skupom uochenih tachaka.
+
+    \begin{de}
+    	Zapremina kvadra $\J=[a_1,b_1]\times \dotso [a_n,b_n]$ je \[\mu(\J):=\prod_{j=1}^n(b_j-a_j).\]
+    \end{de}
+
+    Specijalno, za $n=1$ velichina $\mu(\J)$ predstavlja duzhinu intervala.
+
+    \begin{de}
+    	Unutrashnjost kvadra $\J = [a_1,b_1]\times \dotso [a_n,b_n]$ je otvoreni kvadar $$\overset{\circ}{\J} = ]a_1,b_1[\times \dotso \times ]a_n,b_n[.$$
+    \end{de}
 \end{document}
