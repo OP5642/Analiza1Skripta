@@ -16,4 +16,5 @@
 \contentsline {chapter}{\numberline {7}Odredjeni integral}{25}{}%
 \contentsline {section}{\numberline {7.1}Rimanov integral}{25}{}%
 \contentsline {subsection}{\numberline {7.1.1}Veza sa primitivnom funkcijom}{25}{}%
+\contentsline {subsection}{\numberline {7.1.2}Kostrukcija Rimanovog integrala}{26}{}%
 \contentsline {chapter}{\numberline {8}Redovi}{27}{}%

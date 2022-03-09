@@ -22,6 +22,7 @@
 \externaldocument{chapters/neodrint}
 \externaldocument{chapters/odrint}
 \externaldocument{chapters/redovi}
+\externaldocument{chapters/uvod}
 \externaldocument{chapters/zasnivanjerealnihbr}
 
 \usepackage{subfiles} %najbolje ovo na kraju koristiti
@@ -34,7 +35,8 @@
 \newcommand{\latin}{\fontencoding{T1}\selectfont} %ovo nam definise funkciju za latinicu
 \newcommand{\nap}{\textbf{Napomena.} }
 \newcommand{\jpd}{\overset{\text{def.}}{\iff}} %je po definiciji
-\newcommand{\f}{\mathscr{F}}
+\newcommand{\f}{\mathscr{F}} %za filter 
+\renewcommand{\b}{\mathscr{B}} %za bazu filtera
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -55,6 +57,9 @@
 \renewcommand{\angle}{\measuredangle} %redefinisemo komandu: kad kucamo \angle, kompajluje se kao \measuredangle
 \newcommand{\ds}{\displaystyle}
 \newcommand{\razl}{\setminus}
+
+\def\zn{,\kern-0.09em,} %definisemo donje navodnike 
+\def\zng{'\kern-0.09em'} %definisemo gornje navodnike
 
 \renewcommand{\Re}{\mathrm{Re}} %redefinisana funkcija za realni deo
 \renewcommand{\Im}{\mathrm{Im}} %redefinisana funkcijaz za imaginarni deo

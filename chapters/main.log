@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.2.8)  3 MAR 2022 11:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.2.8)  3 MAR 2022 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**/home/ognjen/Documents/Fakultet/Analiza1/GitSkripta/main.tex
+(/home/ognjen/Documents/Fakultet/Analiza1/GitSkripta/main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2021-11-22>
 (/usr/share/texmf-dist/tex/latex/base/book.cls
@@ -437,7 +437,12 @@ No file chapters/neodrint.aux
 LABELS NOT IMPORTED.
  on input line 23.
 
-Package xr Info: IMPORTING LABELS FROM chapters/odrint.aux on input line 24.
+
+Package xr Warning: 
+No file chapters/odrint.aux
+LABELS NOT IMPORTED.
+ on input line 24.
+
 
 Package xr Warning: 
 No file chapters/redovi.aux
@@ -511,22 +516,22 @@ File: l3backend-pdftex.def 2021-12-14 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
 \c@lstlisting=\count302
 
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -602,19 +607,19 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 122
+LaTeX Font Info:    Trying to load font information for U+msa on input line 118
 .
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 122
+LaTeX Font Info:    Trying to load font information for U+msb on input line 118
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-2.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
+8.
 
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -631,86 +636,27 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-(./chapters/uvod.tex) [5] [6
 
-]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-(./chapters/zasnivanjerealnihbr.tex [7]
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 8
-3.
+! LaTeX Error: File `chapters/uvod.tex' not found.
 
-(/usr/share/texmf-dist/tex/latex/doublestroke/Udsrom.fd
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)) [8]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
-(./chapters/elfje.tex) [9
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
 
-] [10
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.123 \subfile{chapters/uvod}
+                             ^^M
+End of file on the terminal!
 
-]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-(./chapters/liminepr.tex [11] [12] [13] [14] [15] [16]) [17] [18
-
-]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 5.
-(./chapters/diferencijabilnost.tex) [19] [20
-
-]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 6.
-(./chapters/neodrint.tex [21]
-Underfull \hbox (badness 10000) in paragraph at lines 99--102
-
- []
-
-[22] [23]) [24]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 7.
-(./chapters/odrint.tex [25
-
-]) [26]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 8.
-(./chapters/redovi.tex) [27
-
-] (./main.aux) ) 
+ 
 Here is how much of TeX's memory you used:
- 7696 strings out of 478353
- 117628 string characters out of 5854636
- 635864 words of memory out of 5000000
- 25640 multiletter control sequences out of 15000+600000
- 424288 words of font info for 91 fonts, out of 8000000 for 9000
+ 7560 strings out of 478353
+ 115515 string characters out of 5854636
+ 618839 words of memory out of 5000000
+ 25549 multiletter control sequences out of 15000+600000
+ 410211 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,12n,71p,671b,667s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnb
-x12.720pk> </home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnbxti10.
-720pk> </home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnr8.600pk> <
-/home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnti8.600pk>{/usr/sha
-re/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/f
-onts/enc/dvips/cm-super/cm-super-ts1.enc} </home/ognjen/.texlive/texmf-var/font
-s/pk/ljfour/lh/lh-ot2/wnti12.600pk> </home/ognjen/.texlive/texmf-var/fonts/pk/l
-jfour/lh/lh-ot2/wnbx12.864pk> </home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/
-lh/lh-ot2/wnsl12.600pk> </home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-
-ot2/wnbx12.600pk> </home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wn
-bx12.1244pk> </home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnr12.6
-00pk> </home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnr12.720pk> <
-/home/ognjen/.texlive/texmf-var/fonts/pk/ljfour/lh/lh-ot2/wnbx12.1037pk></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/
-texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs1
-0.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (27 pages, 334724 bytes).
-PDF statistics:
- 592 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 58i,6n,71p,293b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

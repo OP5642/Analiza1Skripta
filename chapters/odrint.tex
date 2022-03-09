@@ -97,5 +97,43 @@
 	$n$-dimenzionim	kvadrom.
     \end{de}
 
+    Krajnji cilj je definisati (ukoliko je moguc1e i izrachunati) $(n+1)$-dimenzionu zapreminu ispod grafika funkcije $f:\mcl{J} \to \R$.
+
+    U sluchaju $n=1$ imamo \zn 2-dimenzionu zapreminu\zng, shto je zapravo povrshina, a u sluchaju $n=2$ imamo \zn 3-dimenzionu zapreminu\zng, shto je zapravo 
+    standardna zapremina.
+
+\subsection{Kostrukcija Rimanovog integrala}
+
+    \begin{de}
+    	Podela intervala $[a,b]$ je konachan skup tachaka $\mcl{P}=\{x_0,x_1,\dotso,x_k\}$, takvih da je $a=x_0<x_1<x_2<\dotso<x_k=b$. Svaku tachku koja je chlan podele
+	intervala nazivamo podeonom tachkom, a svaki od intervala $[x_i,x_{i+1}],i\in\{0,1,\dotso,n-1\}$ nazivamo podeonim intervalom.
+    \end{de}
+
+    Neka su $\mcl{P}_1$ i $\mcl{P}_2$ podele intervala $[a,b]$. Ukoliko je $\mcl{P}_2\psj \mcl{P}_1$, onda kazhemo da je $\mcl{P}_1$ finija od $\mcl{P}_2$. Podela 
+    $\mcl{P}_1\cup \mcl{P}_2$ je superpozicija podela $\mcl{P}_1$ i $\mcl{P}_2$ (i ona je, trivijalno, finija od obe podele).
+
+    Ako su $\mcl{I}_1,\mcl{I}_2,\dotso,\mcl{I}_n\psj \R$ intervali, podela kvadra $\mcl{J}=\mcl{I}_1 \times \mcl{I}_2 \times \dotso \times \mcl{I}_n\psj \R^n$ je
+    $\mcl{P}=(\mcl{P}_1,\mcl{P}_2,\dotso, \mcl{P}_n)$, gde je $\mcl{P}_j$ podela intervala $\mcl{I}_j$, za svako $j\in \{1,2,\dotso,n\}$.
+
+    Analogno definishemo pojmove finije podele i superpozicije podela kvadra. Kazhemo da je jedna podela kvadra finija od druge podele kvadra, ako je \zn finija po svakoj ko-ordinati\zng. 
+    Superpozicija podela kvadra je podela dobijena superpozicijama \zn po svim koordinatama\zng. Podeoni kvadri su proizvodi podeonih intervala.
+
+    \begin{de}
+    	Podela kvadra $\mcl{J}$ sa uochenim tachkama je par $(\mcl{P},c)$, gde je $\mcl{P}$ podela kvadra $\mcl{J}$ sa podeonim kvadrima $\mcl{J}_1,\dotso\mcl{J}_l$,
+	a $c=(c_1,c_2,\dotso,c_l)$ $l$-torka brojeva takva da je $(\forall i)c_i\in\mcl{J}_i$ ($c_i$ je uochena tachka kvadra $\mcl{J}_i$).
+    \end{de}
+
+    Sa $\mcl{P}_\mcl{J}$ oznachavamo skup svih podela kvadra $\mcl{J}$, a sa $\widetilde{\mcl{P}}_\mcl{J}$ skup svih podela kvadra $\mcl{J}$ sa uochenim tachkama.
+    Identifikujemo $\mcl{P}\in \mcl{P}_\mcl{J}$ sa $(\mcl{P},\emptyset)\in \widetilde{\mcl{P}}_\mcl{J}$ i smatramo da je $\mcl{P}_\mcl{J}\psj\widetilde{\mcl{P}}_\mcl{J}$
+    
+    \begin{de}
+    	Parametar podele $\mcl{P}=(\mcl{P}_1,\mcl{P}_2,\dotso, \mcl{P}_n)$ (u oznaci $\lambda(P)$) je maksimum duzhina svih podeonih intervala podela $\mcl{P}_1,\mcl{P}_2,\dotso, \mcl{P}_n$.
+    \end{de}
+
+    Neka je, za $\delta>0$:
+    \[B_\delta := \{(\mcl{P},c)\in \widetilde{\mcl{P}}_\mcl{J}\mid \lambda(P)<\delta\}.\]
+    Dokazhimo da je tada
+    \[\b_\mcl{J}:=\{B_\delta \mid \delta > 0\}\]
+    baza filtera na $\widetilde{\mcl{P}}_\mcl{J}$. 
 
 \end{document}
