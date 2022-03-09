@@ -13,8 +13,9 @@
 \contentsline {section}{\numberline {6.1}Primitivna funkcija}{21}{}%
 \contentsline {subsection}{\numberline {6.1.1}Tablica primitivnih funkcija}{24}{}%
 \contentsline {section}{\numberline {6.2}Neodred1eni integral}{24}{}%
-\contentsline {chapter}{\numberline {7}Odredjeni integral}{25}{}%
-\contentsline {section}{\numberline {7.1}Rimanov integral}{25}{}%
-\contentsline {subsection}{\numberline {7.1.1}Veza sa primitivnom funkcijom}{25}{}%
-\contentsline {subsection}{\numberline {7.1.2}Kostrukcija Rimanovog integrala}{26}{}%
-\contentsline {chapter}{\numberline {8}Redovi}{27}{}%
+\contentsline {subsection}{\numberline {6.2.1}Osnovni metodi izrachunavanja neodred1enih integrala}{26}{}%
+\contentsline {chapter}{\numberline {7}Odredjeni integral}{29}{}%
+\contentsline {section}{\numberline {7.1}Rimanov integral}{29}{}%
+\contentsline {subsection}{\numberline {7.1.1}Veza sa primitivnom funkcijom}{29}{}%
+\contentsline {subsection}{\numberline {7.1.2}Kostrukcija Rimanovog integrala}{30}{}%
+\contentsline {chapter}{\numberline {8}Redovi}{31}{}%
