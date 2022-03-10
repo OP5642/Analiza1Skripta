@@ -167,4 +167,74 @@
     \begin{de}
     	Unutrashnjost kvadra $\J = [a_1,b_1]\times \dotso [a_n,b_n]$ je otvoreni kvadar $$\overset{\circ}{\J} = ]a_1,b_1[\times \dotso \times ]a_n,b_n[.$$
     \end{de}
+
+    \begin{tvr}
+    	Neka su $\J$ i $\J_1,\dotso,\J_k$ kvdri u $\R^n$. Tada vazhi: 
+	\begin{itemize}
+	    \item[(1)] $\mu(p\J)=|p|^n\mu(J)$, za $p \in \R$. 
+	    \item[(2)] $\J \psj \cup_{i=1}^k \implies \mu(\J) \mj \sum_{i=1}^k \mu(\J_i)$
+	    \item[(3)] $\J=\cup_{i=1}^k \land ( p \neq q \implies \overset{\circ}{\J_p} \cap \overset{\circ}{\J_q} = \emptyset) \implies \mu(\J) = \sum_{i=1}^k \mu(\J_i)$
+	\end{itemize}
+    \end{tvr}
+
+    \begin{proof}
+    	Sledi direktno iz definicije zapremine kvadra.
+    \end{proof}
+
+    \begin{de}
+    	neka je $\J \psj \R^n$ $n$-dimenzioni kvadar, $(\mcl{P},c)$ podela kvadra $\J$ sa uochenim tachkama $ c = \{c_1,\dotso, c_l\}$ i podeonim kvadrima $\J_1,\dotso,\J_l$
+	i $f:\J \to \C$ funkcija. Velichina 
+	\[ \ris f P c:= \sum_{i=1}^{l}f(c_i)\mu(\J_i)\]
+	naziva se Rimanovom integralnom sumom. Limes (ako postoji) 
+	\begin{align}
+	    \label{defrimint}
+	    \int_\J f(x)dx:=\lim_{\f_\J} \ris f P c 
+	\end{align}
+	funkcije 
+	\[\ris f \cdot \cdot : \widetilde{\mcl{P}}_\J \to \C, (\mcl{P},c) \mapsto \ris f P c\]
+	naziva se Rimanovim integralom funkcije $f$.
+    \end{de}
+
+    Chesto koristimo i druge oznake za  $\int_\J f(x)dx$:
+    \[\int_\J f, \int_\J f(x_1,x_2,\dotso, x_n)dx_1\dotso dx_n.\]
+    SPecijalno, za $n=1$ i $\J=[a,b]$ pishemo 
+    \[\int_{[a,b]}f(x)dx = \int_a^b f(x)dx.\]
+    Ako limes u \ref{defrimint} postoji (i konachan je), kazhemo da je funkcija $f$ integrabilna po Rimanu na kvadru $\J$. Skup svih funkcija za koje postoji limes
+    \ref{defrimint} na kvadru $\J$ obelezhavamo sa $\mcl{R}(\J)$ (to je skup svih funkcija integrabilnih po Rimanu na posmatranom kvadru).
+
+    \begin{tvr}
+    	Neophodan uslov integrabilnosti po Rimanu jeste da je funkcija ograni-chena na posmatranom kvadru. Tj.
+	\[\mcl{R}(\J) \psj B(\J)\]
+    \end{tvr}
+
+    \begin{proof}
+    	Neka je $\mcl{P}$ proizvoljna podela kvadra $\J$. Pretpostavimo suprotno, tj. da funkcija nije ogranichana na $\J$. Ako funkcija nije ogranichena na 
+	$\J$, to znachi da postoji neki kvadar podele $\J_i$ na kojem funkijca nije ogranichena (u suprotnom bi bila ogrnichena). Uzmimo dve podele, $(\mcl{P},c')$ i 
+	$(\mcl{P},c'')$, koje se razlikuju jedino po odabiru uochene tachke $c'_i \neq c''_i$ na kvadru $\J_i$. Tada je 
+	\[|\ris f P c' - \ris f P c''| = |f(c'_i)-f(c''_i)|\mu(\J_i),\]
+	shto je proizvoljno veliko (jer je $|f(c'_i)-f(c''_i)|$ proizvoljno veliko), pa funkcija $\ris f \cdot \cdot$ ne ispunjava Koshijev uslov.
+    \end{proof}
+
+    \nap $$f \in \mcl{R} \implies \lim_{\f_\J}\ris f P c$$ ne zavisi od $c$.
+
+    \begin{tvr}
+	Funkcija $f: \J \to \C$ je integrablna po Rimanu akko su integrabilne funkcije $\Re f, \Im f: \J \to \R$. Ako je $f$ integrabilna, onda vazhi:
+	\[\int_\J f(x)dx = \int_\J \Re f(x) dx + i\int_\J\Im f(x) dx.\]
+    \end{tvr}
+    \begin{proof}
+	\begin{align*}
+	    \ris{f}{P}{c} = &\ris{\Re f+ i\Im f}{P}{c}\\
+	    = &\ris{\Re f}{P}{c} + i \ris{\Im f}{P}{c}\\
+	    \implies &\Re \ris{f}{P}{c} = \ris{\Re f}{P}{c}\\ 
+	    & \Im \ris{f}{P}{c} = \ris{\Im f}{P}{c}\\
+	    \implies &\text{ Dokaz je direktna posledica odgovarajuc1eg tvrdjenja za } \lim_\f.
+	\end{align*}     \end{proof}
+
+
+    \begin{posl}
+    	Integrabilnost i integrali kompleksnih funkcija svode se na inte-grabilnost i integral realnih.
+    \end{posl}
+
+\section{Darbuov integral}
+\subsection{Gornja i donja Darbuova suma}
 \end{document}
