@@ -236,5 +236,44 @@
     \end{posl}
 
 \section{Darbuov integral}
+
+    Dosada smo se bavili Rimanovim integralom. Nashe sledec1e interesovanje bic1e Darbu-ov integral, za koji c1emo kasnije dokazati da je ekvivalentan Rimanovom,
+    ali postojanje oba nam olakshava dokaze i omoguc1ava nam razlichite pristupe istom problemu.
+
 \subsection{Gornja i donja Darbuova suma}
+    
+    Neka je $\J\psj \R^n$ kvadar u $n$-dimenzija i $\mcl{P}$ neka njegova podela i $\J_1, \dotso, \J_l$ kvadri podele $\mcl{P}$ i $f:\J \to \R$ ogranich1ena realna funkcija.
+    Oznachmo sa $m_i$ i $M_i$  infimum i supremum funkcije $f$ na kvadru podele $\J_i$, redom.
+
+    \begin{de}
+    	Velichine 
+	\[s(f,\mcl{P})=\sum_{i=1}^lm_i\mu(\J_i)\text{ i }S(f,\mcl{P})=\sum_{i=1}^lM_i\mu(\J_i)\]
+	nazivaju se donja i gornja Darbuova suma funkcije $f$ na kvadru $\J$ u odnosu na podelu $\mcl{P}$. 
+    \end{de}
+    
+
+    \begin{lem}
+	\begin{enumerate}
+	    \item $\ds{\dds f P = \inf_c \ris f P c \mj \sup_c \ris f P c = \gds f P}$
+	    \item Ako je $\mcl{P}_1$ podela finija od podele $\mcl{P}_2$, onda je 
+	    	\[s(f,\mcl{P}_2) \leqslant s(f,\mcl{P}_1) \leqslant S(f,\mcl{P}_1) \leqslant S(f,\mcl{P}_2).\] 
+	    \item Za proizvoljne podele $\mcl{P}_1$ i $\mcl{P}_2$ je $s(f,\mcl{P}_1) \mj S(f,\mcl{P}_2)$. 
+	\end{enumerate}
+    \end{lem}
+
+    \begin{proof}
+    	Dokaz prve stavke sledi direktno iz definicije gornje i donje Darbuove sume. Druga stavka iziskuje neshto vishe posla, ali je opet intuitivna.
+	Svaki kvadar grublje podele se mozhe zapisati kao konachna unija podeonih kvadara finije podele. Dakle, za svaki kvadar $\J_i$ podele $\mcl{P}_2$je 
+	\[\J_i = \cup_{j=1}^k \J_i^j.\] Kako je svaki $\J_i^j$ podskup kvadra $\J_i$, onda  je $\inf f(\J_i) \mj \inf f(\J_i^j)$.
+	\begin{align*}
+	    \inf f(\J_i)\mu(\J_i) &= \inf f(\ds{\cup_{j=1}^k \J_i^j})\sum_{j=1}^k\mu(\J_i^j)\\
+	    &\mj \sum_{j=1}^k \inf f(\J_i^j)\mu(\J_i^j). 
+	\end{align*}
+	Sumiranjem po svim podeonim kvadrima dobijamo prvu nejednakost u 2. Slichnim postup-kom (ili primenom dobijenog dela na $-f$ umesto na $f$) dobijamo i trec1u nejednakost.
+	Druga nejednakost je direktna posledica svojstva supremuma i infumuma (infimum je manji od supremuma, pa opet sumiranjem po svim podeonim kvadrima dobijamo trazhenu nejednakost).
+	Svojstvo 3 sledi iz svojstva 2 posmatranjem superpozicije podela.
+	\[s(f,\mcl{P}_1) \mj s(f,\mcl{P}_1 \cup \mcl{P}_2)\mj S(f,\mcl{P}_1\cup \mcl{P}_2)\mj S(f,\mcl{P}_2)\]
+    \end{proof}
+
+
 \end{document}
