@@ -135,6 +135,7 @@
     Dokazhimo da je tada
     \[\b_\mcl{J}:=\{B_\delta \mid \delta > 0\}\]
     baza filtera na $\widetilde{\mcl{P}}_\mcl{J}$. 
+    \label{filterpodela}
 
     Najpre, primetimo da je uopshte smisleno govoriti o filteru u ovoj situaciji (tj. o bazi filtera). Ochigledno, svaki $B_\delta$ je podskup od $\widetilde{\mcl{P}}_\J$,
     pa $\b_\J$ zaista jeste familija podskupova $\widetilde{\mcl{P}}_\J$. Najpre, primetimo da za dovoljno veliko $\delta$ vazhi $B_\delta=\widetilde{\mcl{P}}_\J$, jer je 
@@ -263,8 +264,8 @@
 
     \begin{proof}
     	Dokaz prve stavke sledi direktno iz definicije gornje i donje Darbuove sume. Druga stavka iziskuje neshto vishe posla, ali je opet intuitivna.
-	Svaki kvadar grublje podele se mozhe zapisati kao konachna unija podeonih kvadara finije podele. Dakle, za svaki kvadar $\J_i$ podele $\mcl{P}_2$je 
-	\[\J_i = \cup_{j=1}^k \J_i^j.\] Kako je svaki $\J_i^j$ podskup kvadra $\J_i$, onda  je $\inf f(\J_i) \mj \inf f(\J_i^j)$.
+	Svaki kvadar grublje podele se mozhe zapisati kao konachna unija podeonih kvadara finije podele. Dakle, za svaki kvadar $\J_i$ podele $\mcl{P}_2$ je 
+	\[\J_i = \ds{\cup_{j=1}^k \J_i^j}.\] Kako je svaki $\J_i^j$ podskup kvadra $\J_i$, onda  je $\inf f(\J_i) \mj \inf f(\J_i^j)$.
 	\begin{align*}
 	    \inf f(\J_i)\mu(\J_i) &= \inf f(\ds{\cup_{j=1}^k \J_i^j})\sum_{j=1}^k\mu(\J_i^j)\\
 	    &\mj \sum_{j=1}^k \inf f(\J_i^j)\mu(\J_i^j). 
@@ -273,6 +274,35 @@
 	Druga nejednakost je direktna posledica svojstva supremuma i infumuma (infimum je manji od supremuma, pa opet sumiranjem po svim podeonim kvadrima dobijamo trazhenu nejednakost).
 	Svojstvo 3 sledi iz svojstva 2 posmatranjem superpozicije podela.
 	\[s(f,\mcl{P}_1) \mj s(f,\mcl{P}_1 \cup \mcl{P}_2)\mj S(f,\mcl{P}_1\cup \mcl{P}_2)\mj S(f,\mcl{P}_2)\]
+    \end{proof}
+
+    \begin{de}
+    	Gornjim i donjim Darbuovim integralom ogranichene funkcije $f:\J \to \R$ na kvadru $\J$ nazivaju se velichine
+	\[ \gint{\J}f(x)dx:= \inf_{\mcl P} \gds f P \] \[\dint{\J} f(x)dx:= \sup_{\mcl P} \dds f P,\]
+	gde se supremum i infimum uzimaju po svim podelama $\mcl P$ kvadra  $\J$.
+    \end{de}
+
+    \begin{posl}
+    	Za proizvoljnu podelu $\mcl P$ kvadra $\J$ vazhi 
+	\[s(f,\mcl{P}) \leqslant\dint{\J}f(x)dx\leqslant\gint{\J}f(x)dx \leqslant S(f,\mcl{P}).\] 
+    \end{posl}
+
+    \begin{proof}
+    	Sledi direktno iz prethodne leme pod 3 prelaskom na $\ds{\sup_{\mcl{P}_1}}$ i $\ds{\inf_{\mcl{P}_2}}$.
+    \end{proof}
+
+    \begin{te}[Darbuova teorema]
+	Neka je $\J\psj \R^n$ $n$-dimenzionu kvadar, $\mcl{P}_\J$ skup svih njegovih podela sa filterom $\f_\J$ (definisanim na strani \pageref{filterpodela}) i 
+	$f: \J \to \R$ ogranichena funkcija. Tada vazhi:
+	\begin{enumerate}
+	    \item 
+	    	$\ds{\exists \lim_{\f_\J} \dds f P \text{ i } \lim_{\f_\J} = \dint f(x)dx}$
+	    \item 
+	    	$\ds{\exists \lim_{\f_\J} \gds f P \text{ i } \lim_{\f_\J} = \gint f(x)dx}.$
+	\end{enumerate}
+    \end{te}
+
+    \begin{proof}
     \end{proof}
 
 

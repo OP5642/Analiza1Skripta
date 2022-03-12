@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.2.8)  10 MAR 2022 18:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.2.8)  12 MAR 2022 13:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -469,14 +469,13 @@ Package: import 2020/04/01  v 6.2
 ))
 \c@pr=\count290
 \c@te=\count291
-\c@teo=\count292
-\c@lem=\count293
-\c@lema=\count294
-\c@posl=\count295
-\c@de=\count296
-\c@za=\count297
-\c@st=\count298
-\c@tvr=\count299
+\c@lem=\count292
+\c@lema=\count293
+\c@posl=\count294
+\c@de=\count295
+\c@za=\count296
+\c@st=\count297
+\c@tvr=\count298
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -510,28 +509,28 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-12-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count300
+\l__color_backend_stack_int=\count299
 \l__pdf_internal_box=\box56
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-\c@lstlisting=\count301
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+\c@lstlisting=\count300
 
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -552,16 +551,16 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count302
+\scratchcounter=\count301
 \scratchdimen=\dimen178
 \scratchbox=\box57
-\nofMPsegments=\count303
-\nofMParguments=\count304
+\nofMPsegments=\count302
+\nofMParguments=\count303
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count305
+\MPscratchCnt=\count304
 \MPscratchDim=\dimen179
-\MPnumerator=\count306
-\makeMPintoPDFobject=\count307
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
 \everyMPtoPDFconversion=\toks32
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -606,19 +605,19 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 126
+LaTeX Font Info:    Trying to load font information for U+msa on input line 128
 .
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 126
+LaTeX Font Info:    Trying to load font information for U+msb on input line 128
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-6.
+8.
 
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -676,10 +675,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--102
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 7694 strings out of 478353
- 117611 string characters out of 5854636
- 640930 words of memory out of 5000000
- 25638 multiletter control sequences out of 15000+600000
+ 7691 strings out of 478353
+ 117602 string characters out of 5854636
+ 640907 words of memory out of 5000000
+ 25635 multiletter control sequences out of 15000+600000
  424288 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,12n,71p,671b,667s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -711,9 +710,9 @@ onts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type
 amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs1
 0.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (35 pages, 377297 bytes).
+Output written on main.pdf (35 pages, 379523 bytes).
 PDF statistics:
- 640 PDF objects out of 1000 (max. 8388607)
+ 642 PDF objects out of 1000 (max. 8388607)
  184 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
