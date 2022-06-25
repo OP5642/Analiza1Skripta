@@ -312,7 +312,105 @@
 	Neka je $\Gamma_\eps$ skup svih tachaka kvadra $\J$ koje lezhe na granicama kvadara podele $\mcl{P}_\eps$. 
 	Tada $\exists\delta>0$ takvo da vazhi: ako je $\mcl{P}$ takva da je $\lambda(\mcl P)<\delta$, onda je zbir zapremina kvadra podele $\mcl P$ koji seku
 	$\Gamma_\eps$ manji od $\eps$.
+	Neka je $\mcl P$ proizvoljna podela za koju je $\lambda(\mcl P) < \delta$. Ako je $\mcl P \cup \mcl{P}_\eps$ superpozicija podela $\mcl P$ i $\mcl{P}_\eps$, onda iz 
+	\ref{pepodela} sledi i (2) u pr. lemi sledi:
+	\[\]
+	\begin{align}
+	    \label{dint2}
+	    \underline{I}-\eps<s(f,\mcl P)\mj s(f,\mcl{P}\cup \mcl{P}_\eps)\mj \underline{I}.
+	\end{align}
+	Sabirci u Darbuovim sumama $s(f,\mcl P \cup \mcl{P}_\eps)$ i $s(f,\mcl{P})$ koji odgovaraju kvadrima koji ne seku $\Gamma_\eps$ su isti. Odatle sledi da 
+	u razlici $s(f,\mcl{P}\cup \mcl{P}_\eps)- s(f,\mcl P) $  uchestvuju samo oni sabirci koji odgovaraju kvadrima koji seku $\Gamma_\eps$, a njihova zapremina
+	je manja od $\eps$.
+	Oznachimo sa $M:=\sup |f|$, odatele sledi:
+	\[|s(f,\mcl{P}\cup \mcl{P}_\eps)- s(f,\mcl P) |<2M\eps.\]
+	Iz ove nejednakosti u \ref{dint2} dobijamo 
+	\begin{align*}
+	    \underline{I} - \dds f P &= \underline{I} - s(f,\mcl{P} \cup \mcl{P}_\eps) + s(f,\mcl{P} \cup \mcl{P}_\eps) - s(f,\mcl P)\\
+	    &\mj \underline{I}  - s(f,\mcl P \cup \mcl{P}_\eps) + |s(f,\mcl P \cup \mcl{P}_\eps)- s(f,\mcl P)|\\
+	    &\mj \eps + 2M\eps = (2M+1)\eps.
+	\end{align*}
+	Kako je $\eps>0$ proizvoljno, sledi da vazhi (1).
+
+	2. Dokazuje se analogno.
     \end{proof}
 
+	\begin{posl}
+		Funkcija $f: \J \to \R$ je integrabllna po Rimanu akko je ogranichena i njen gornji i donji Darbuov integral su jednaki, tj.
+		\[f \in \mcl R \iff f \in B(\J) \land \dint{\J} f(x)dx = \gint{\J} f(x)dx \]
+	\end{posl}
 
-\end{document}
+	\begin{proof}
+		Oba smera slede direktno iz Darbuove teoreme.
+	\end{proof}
+	
+	\begin{posl}
+		\label{koshi_karakterizaijca_odr_integrala}
+		Funkcija $f: \J \to \R$ je integrabllna po Rimanu akko je ogranichena i za svako $\eps > 0$ postoji podela $\mcl P$ kvadra $\J$ takva da je 
+		\[S(f, \mcl P) - s(f, \mcl P) < \eps\]
+	\end{posl}
+	
+	\begin{proof}
+		Sledi direktno iz Koshijevog uslova postojanja limesa za funkciju (posamtrana funkcija je donja, odnosno gornja darbuova suma) i Darbuove teoreme.
+	\end{proof}
+
+	\begin{de}
+		\label{osc}
+		Neka je $T = \R ^ n$ i $f : T \to \R$. Oscilacija funkcije $f$ na skupu $A \psj T$ je 
+		\[w(f, A) := \sup_{t \in A} f(t) - \inf_{t \in A} f(t)\]	
+	\end{de}
+
+	\begin{de}
+		Oscilacija funkcije f u tachki $a = (a_1, a_1, \dotso, a_n)\ \in T$ je 
+		\begin{align*}
+		 	w(f,a) := \lim_{\delta \to 0_+}w(f, \J_{\delta}(a) \cap T),
+		\end{align*}
+		gde je $\J_\delta(a) := \{x = (a_1, a_2, \dotso, a_n) \mid (\forall j) |x_j - a_j| < \delta\}$ kvadar sa centrom u tachki $a$ i strnaicama
+		duzhine $2\delta$.
+	\end{de}
+
+	\nap Iz osobina supremuma i infimuma sledi da je \[A \psj B \implies w(f, A) \mj w(f,B), \]pa je \[\delta \mapsto w(f,\J_\delta(a) \cap T)\] rastuc1a funkcija
+	i zato limes u definiciji \ref{osc} postoji (i jednak je $\ds{\inf_{\delta > 0}})$.
+
+	Oscilacija funkcije se mozhe i uzeti kao, mozhda ne najprirodnija, definicija nepre-kidnosti. To nam govori sledec1i zadatak.
+	\begin{za}
+		Neka je $T \psj \R$. Dokazati da je $f:T \to \R$ neprekidna u tachki $a\in T$ akko je $w(f,a) = 0$.
+	\end{za}
+
+	\begin{za}
+		Koristec1i se prethodnim zadatkom, ispitati neprekidnost funkcije
+		\[f(x)=
+		\begin{cases}
+			\sin(\frac{1}{x}), & x \neq 0\\
+			0, & x = 0.
+		\end{cases}
+		\]
+	\end{za}
+
+	\begin{posl}
+		Funkcija $f: I \to \R$ je integrabilna po Rimanu akko je ogranichena i za svako $\eps > 0$ postoji podela $\mcl P$ 
+		tako da je $\ds{\sum_{k=1}^{l} w(f,\mcl J _k)\mu(\mcl J _k) < \eps}$, gde su $\mcl J _i$ kvadri podele $\mcl P$.
+	\end{posl}
+
+	\begin{proof}
+		Dokaz sledi iz posledice \ref{koshi_karakterizaijca_odr_integrala} i definicije oscilacije na skupu.
+	\end{proof}
+
+	\begin{pr}
+		Nekaje $\mcl J = [a, b]$ kompaktan interval u $\R$ i $f: \mcl J \to \C$ neprekidna funkcija. Onda je $f$ integrabilna na $\mcl J$. Drugim rechima
+		\[\cont (\mcl J)\psj \mcl R (\mcl J).\]
+	\end{pr}
+
+	\begin{proof}
+		Po Kantorovoj teoremi, funkcija $f$ je ravnomerno neprekidna, pa vazhi
+		\[(\forall \eps > 0) (\exists \delta > 0) |x - y| < \delta \implies |f(x) - f(y)| < \frac{\eps}{b - a}.\]
+		Izaberimo proizvoljnu podelu $\mcl P$ kvadra $\mcl J$ takva da je $x_j - x_{j-1} < \delta$. Tada je 
+		\[
+			\gds f P - \dds f P = \ds{\sum_{j=1}^{l}(\max_{[x_{j-1},x_j]}f - \min_{[x_{j-1}, x_j]}f) (x_j - x_{j-1})
+								= \frac{\eps}{b-a}\sum_{j=1}^{l}(x_j - x_{j-1}) = \eps} 
+		\]
+		Odatle i iz posledice \ref{koshi_karakterizaijca_odr_integrala} sledi $f \in \mcl R(\mcl J)$.
+	\end{proof}
+
+
+	\end{document}

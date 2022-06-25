@@ -20,4 +20,4 @@
 \contentsline {subsection}{\numberline {7.1.2}Kostrukcija Rimanovog integrala}{30}{}%
 \contentsline {section}{\numberline {7.2}Darbuov integral}{33}{}%
 \contentsline {subsection}{\numberline {7.2.1}Gornja i donja Darbuova suma}{33}{}%
-\contentsline {chapter}{\numberline {8}Redovi}{35}{}%
+\contentsline {chapter}{\numberline {8}Redovi}{37}{}%
